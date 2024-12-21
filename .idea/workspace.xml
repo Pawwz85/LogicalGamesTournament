@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a2ab2b01-cd5a-4b9f-bcb4-eaca217b4188" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/python/GameFrame.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/python/IGameDefinition.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/python/Observer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/python/Serializable.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/python/test_observer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/python/test_serializable.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Unit Test" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2qJCiCGuU2jx19WA0femGpUH9Wp" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_observer.TestObservableState.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_observer.TestObservableState.test_multiple_handles.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_observer.TestObservableState.test_register_observer.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_observer.TestObservableState.test_unregister_observer.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_observer.TestObserver.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_observer.TestObserver.test_multi_watches.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_observer.TestObserver.test_unwatch.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_observer.TestObserver.test_unwatch_all.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_observer.TestObserver.test_unwatch_single.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_observer.TestObserver.test_watch.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_serializable.MyTestCase.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_serializable.MyTestCase.test_something.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Pawwz/IdeaProjects/LogicalGamesTournament&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Pawwz/IdeaProjects/LogicalGamesTournament/src/main/java/org/example/Main.java&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Python tests.Python tests for test_observer.TestObserver.test_unwatch_all">
+    <configuration name="Python tests for test_observer.TestObserver" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="LogicalGamesTournament" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/test/python" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_observer.TestObserver&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_observer.TestObserver.test_multi_watches" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="LogicalGamesTournament" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/test/python" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_observer.TestObserver.test_multi_watches&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_observer.TestObserver.test_unwatch" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="LogicalGamesTournament" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/test/python" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_observer.TestObserver.test_unwatch&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_observer.TestObserver.test_unwatch_all" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="LogicalGamesTournament" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/test/python" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_observer.TestObserver.test_unwatch_all&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_observer.TestObserver.test_unwatch_single" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="LogicalGamesTournament" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/test/python" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_observer.TestObserver.test_unwatch_single&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Python tests for test_observer.TestObserver.test_unwatch_all" />
+        <item itemvalue="Python tests.Python tests for test_observer.TestObserver" />
+        <item itemvalue="Python tests.Python tests for test_observer.TestObserver.test_unwatch_single" />
+        <item itemvalue="Python tests.Python tests for test_observer.TestObserver.test_multi_watches" />
+        <item itemvalue="Python tests.Python tests for test_observer.TestObserver.test_unwatch" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-09665e90c3a7-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.15026.15" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a2ab2b01-cd5a-4b9f-bcb4-eaca217b4188" name="Changes" comment="" />
+      <created>1734371418339</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1734371418339</updated>
+    </task>
+    <servers />
+  </component>
+</project>
