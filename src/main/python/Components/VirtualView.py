@@ -1,5 +1,5 @@
 from __future__ import annotations
-from src.main.python.FancyAttributes import IAttribute
+from src.main.python.Components.FancyAttributes import IAttribute
 
 
 class IVirtualView:
@@ -65,3 +65,6 @@ class LayoutTreeBuilder:
                 return False
 
         return True
+
+    def get_current(self):
+        return self._current

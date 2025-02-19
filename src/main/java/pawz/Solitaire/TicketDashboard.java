@@ -1,0 +1,61 @@
+package pawz.Solitaire;
+
+import pawz.Solitaire.CLI.StringTableFormatter;
+import pawz.Tournament.DTO.PuzzleSolutionTicketDTO;
+import pawz.Tournament.Interfaces.IPuzzleSolutionTicketService;
+import pawz.Tournament.Interfaces.IServiceSession;
+import pawz.Tournament.TimeFormatter;
+
+public class TicketDashboard {
+    private final IPuzzleSolutionTicketService<SudokuMove, SudokuState> puzzleSolutionTicketService;
+    private final StringTableFormatter tableFormatter;
+    private final long tournamentStartedTimestamp;
+
+    public TicketDashboard(IPuzzleSolutionTicketService<SudokuMove, SudokuState> puzzleSolutionTicketService, long tournamentStartedTimestamp) {
+        this.puzzleSolutionTicketService = puzzleSolutionTicketService;
+        this.tournamentStartedTimestamp = tournamentStartedTimestamp;
+
+        int[] tableWidths = {10, 10, 25, 25};
+
+        tableFormatter = new StringTableFormatter(tableWidths);
+    }
+
+
+    private String ticketPhaseToString(byte ticketPhase){
+        return switch (ticketPhase){
+            case 0 -> "Not Solved";
+            case 1 -> "Solution Declared";
+            case 2 -> "Solution Committed";
+            case 3 -> "Solution Rejected";
+            case 4 -> "Solution Verified";
+            default -> "Error";
+        };
+    }
+
+    private void displayLabels(){
+        StringTableFormatter.RowBuilder builder = tableFormatter.getRowBuilder();
+        builder.putString("Ticket ID").putString("Owner ID").putString("Phase").putString("Solving Time").display();
+    }
+
+    private void displayTicket(PuzzleSolutionTicketDTO<SudokuMove, SudokuState> dto){
+          int ticketId = dto.ticketID;
+          int ownerID = dto.playerID;
+          String phase = ticketPhaseToString(dto.phase);
+          String solvingTime = (dto.phase == 0)? "----":TimeFormatter.formatTime(dto.epochTimestamp - tournamentStartedTimestamp);
+
+        StringTableFormatter.RowBuilder builder = tableFormatter.getRowBuilder();
+          builder.putInt(ticketId).putInt(ownerID).putString(phase).putString(solvingTime).display();
+    }
+
+    public void displayTickets(IServiceSession session){
+        puzzleSolutionTicketService.getAllOwnedTickets(session);
+        displayLabels();
+
+        for(var ticket: puzzleSolutionTicketService.getAllTicketsRecords()){
+            if(ticket.playerID == session.getSessionId())
+                displayTicket(ticket);
+        }
+
+    }
+
+}

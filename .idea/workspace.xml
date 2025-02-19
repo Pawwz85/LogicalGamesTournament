@@ -1,15 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2ab2b01-cd5a-4b9f-bcb4-eaca217b4188" name="Changes" comment="Original commit.&#10;&#10;This commit is focused on providing interfaces that allow User to define his custom games.">
-      <change afterPath="$PROJECT_DIR$/src/main/python/FancyAttributes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/python/Timer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/python/VirtualView.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/python/test_timer.py" afterDir="false" />
+    <list default="true" id="a2ab2b01-cd5a-4b9f-bcb4-eaca217b4188" name="Changes" comment="Development Snapshot">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Puzzle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/PuzzleSolutionBuilderFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/CLI/BasicCommandHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/CLI/BasicCommandHandlerBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/CLI/CommandParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/CLI/ICommandHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/CLI/ImmutablePair.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/CLI/NotEnoughArgumentsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/CLI/StringTableFormatter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/ReplikaStarter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/SudokuGameDefinition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/SudokuMove.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/SudokuMoveDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/SudokuPuzzle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/SudokuPuzzleUIController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/SudokuPuzzleUIModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/SudokuPuzzleUIView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/SudokuState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/SudokuStateDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/TicketDashboard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/demo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/DTO/PuzzleSolutionTicketByteDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/DTO/PuzzleSolutionTicketDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/DTO/PuzzleSolutionTicketDTOByteDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Exceptions/AuthenticationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Exceptions/IllegalMoveException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Exceptions/NotPreparedException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Exceptions/OwnershipException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Exceptions/RepositoryException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Exceptions/WrongStateException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Interfaces/ByteDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Interfaces/ByteEncodable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Interfaces/GameDefinition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Interfaces/IPuzzleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Interfaces/IPuzzleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Interfaces/IPuzzleSolutionTicketProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Interfaces/IPuzzleSolutionTicketRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Interfaces/IPuzzleSolutionTicketService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Interfaces/IServiceSession.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Interfaces/ISolutionDeclarationManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/PuzzleDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/PuzzleSolutionDigester.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/PuzzleSolutionTicket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/PuzzleSolutionTicketPhase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/LocalPuzzleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/LocalPuzzleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/LocalSolutionTicketRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/LocalSolutionTicketService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/TournamentReplika.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/SessionType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/TimeFormatter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/TournamentClient/LogicalTournamentClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/TournamentClient/PuzzleFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/python/Components/Components.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/python/Components/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/python/UI/UISchema.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/python/UI/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/python/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/AbstractBehavioralTests/TestByteDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Mockups/IntegerMove.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Mockups/IntegerMoveByteDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Mockups/MockedSolutionDeclarationManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Mockups/SimpleArithmeticGameDefinition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Mockups/SimpleArithmeticPuzzleState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Mockups/SimpleArithmeticPuzzleStateByteDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestBehavioralsForMockups/TestIntegerMoveByteEncoding.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestBehavioralsForMockups/TestSimpleArithmeticPuzzleStateByteEncoding.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestPuzzleSolutionTicket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestPuzzleSolutionTicketDTOByteEncoding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/python/FancyAttributes.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/python/Components/FancyAttributes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/python/VirtualView.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/python/Components/VirtualView.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,11 +97,17 @@
       <list>
         <option value="Python Unit Test" />
         <option value="Python Script" />
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -38,7 +120,18 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.CLITest.executor&quot;: &quot;Run&quot;,
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.demo.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in LogicalGamesTournament.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestByteDecoder.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestIntegerMoveByteEncoding.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestPuzzleSolutionTicket.TicketThrowsExceptionWhenMethodIsCalledInWrongPhase.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestPuzzleSolutionTicket.testInvalidHash.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestPuzzleSolutionTicket.testInvalidSolutionRejection.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestPuzzleSolutionTicket.testValidSolutionDeclaration.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestPuzzleSolutionTicketDTOByteEncoding.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestSimpleArithmeticPuzzleStateByteEncoding.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_observer.TestObservableState.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_observer.TestObservableState.test_multiple_handles.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_observer.TestObservableState.test_register_observer.executor&quot;: &quot;Run&quot;,
@@ -62,101 +155,83 @@
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Pawwz/IdeaProjects/LogicalGamesTournament&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Pawwz/IdeaProjects/LogicalGamesTournament/src/main/java/org/example/Main.java&quot;
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Pawwz/IdeaProjects/LogicalGamesTournament/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.import&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python tests.Python tests for test_timer.TestRepeatingEventTimer">
-    <configuration name="Python tests for test_observer.TestObserver.test_unwatch_all" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Pawwz\IdeaProjects\LogicalGamesTournament\src\main\python\Components" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.demo">
+    <configuration name="CLITest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pawz.Solitaire.CLI.CLITest" />
       <module name="LogicalGamesTournament" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/test/python" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_observer.TestObserver.test_unwatch_all&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pawz.Solitaire.CLI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="Python tests for test_timer.TestRepeatingEventTimer" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="demo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pawz.Solitaire.demo" />
       <module name="LogicalGamesTournament" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/test/python" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_timer.TestRepeatingEventTimer&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pawz.Solitaire.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="Python tests for test_timer.TestSingleEventTimer.test_progress_before_start_is_0" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="All in LogicalGamesTournament" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LogicalGamesTournament" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/test/python" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_timer.TestSingleEventTimer.test_progress_before_start_is_0&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="Python tests for test_timer.TestSingleEventTimer.test_progress_in_middle" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="TestPuzzleSolutionTicket.TicketThrowsExceptionWhenMethodIsCalledInWrongPhase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LogicalGamesTournament" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/test/python" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_timer.TestSingleEventTimer.test_progress_in_middle&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestPuzzleSolutionTicket" />
+      <option name="METHOD_NAME" value="TicketThrowsExceptionWhenMethodIsCalledInWrongPhase" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="Python tests for test_timer.TestTimer" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="TestPuzzleSolutionTicket.testInvalidHash" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LogicalGamesTournament" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/test/python" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_timer.TestTimer&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestPuzzleSolutionTicket" />
+      <option name="METHOD_NAME" value="testInvalidHash" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for test_timer.TestRepeatingEventTimer" />
-        <item itemvalue="Python tests.Python tests for test_timer.TestTimer" />
-        <item itemvalue="Python tests.Python tests for test_timer.TestSingleEventTimer.test_progress_in_middle" />
-        <item itemvalue="Python tests.Python tests for test_timer.TestSingleEventTimer.test_progress_before_start_is_0" />
-        <item itemvalue="Python tests.Python tests for test_observer.TestObserver.test_unwatch_all" />
+        <item itemvalue="Application.demo" />
+        <item itemvalue="Application.CLITest" />
+        <item itemvalue="JUnit.All in LogicalGamesTournament" />
+        <item itemvalue="JUnit.TestPuzzleSolutionTicket.TicketThrowsExceptionWhenMethodIsCalledInWrongPhase" />
+        <item itemvalue="JUnit.TestPuzzleSolutionTicket.testInvalidHash" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-python-sdk-09665e90c3a7-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.15026.15" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -175,11 +250,21 @@
       <option name="project" value="LOCAL" />
       <updated>1734808924046</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added a skeleton of a layout tree">
+      <option name="closed" value="true" />
+      <created>1735090991690</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1735090991690</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Original commit.&#10;&#10;This commit is focused on providing interfaces that allow User to define his custom games." />
-    <option name="LAST_COMMIT_MESSAGE" value="Original commit.&#10;&#10;This commit is focused on providing interfaces that allow User to define his custom games." />
+    <MESSAGE value="Added a skeleton of a layout tree" />
+    <MESSAGE value="Development Snapshot" />
+    <option name="LAST_COMMIT_MESSAGE" value="Development Snapshot" />
   </component>
 </project>
