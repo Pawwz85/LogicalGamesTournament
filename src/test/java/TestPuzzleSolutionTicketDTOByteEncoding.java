@@ -38,7 +38,7 @@ public class TestPuzzleSolutionTicketDTOByteEncoding
             PuzzleSolutionTicket<IntegerMove, SimpleArithmeticPuzzleState> ticket =
                     new PuzzleSolutionTicket<>(playerId, 1, new SimpleArithmeticPuzzleState(10, 1), new SimpleArithmeticGameDefinition());
 
-            MockedSolutionDeclarationManager<IntegerMove> solutionDeclarationManager = new MockedSolutionDeclarationManager<>(ticket);
+            MockedSolutionDeclarationManager<IntegerMove, SimpleArithmeticPuzzleState> solutionDeclarationManager = new MockedSolutionDeclarationManager<>(ticket);
 
             result.add(ticket.toDto());
 
@@ -56,7 +56,7 @@ public class TestPuzzleSolutionTicketDTOByteEncoding
             PuzzleSolutionTicket<IntegerMove, SimpleArithmeticPuzzleState> ticketWithInvalidSolution =
                     new PuzzleSolutionTicket<>(playerId, 1, new SimpleArithmeticPuzzleState(10, 1), new SimpleArithmeticGameDefinition());
 
-            MockedSolutionDeclarationManager<IntegerMove> invalidSolutionDeclaration = new MockedSolutionDeclarationManager<>(ticketWithInvalidSolution);
+            MockedSolutionDeclarationManager<IntegerMove, SimpleArithmeticPuzzleState> invalidSolutionDeclaration = new MockedSolutionDeclarationManager<>(ticketWithInvalidSolution);
             invalidSolutionDeclaration.prepare(Stream.of(3, -2).map(IntegerMove::new).collect(Collectors.toList()));
             invalidSolutionDeclaration.declare();
             result.add(ticketWithInvalidSolution.toDto());

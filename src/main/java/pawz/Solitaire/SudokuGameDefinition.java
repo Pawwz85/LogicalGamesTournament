@@ -4,6 +4,8 @@ import org.jetbrains.annotations.NotNull;
 import pawz.Tournament.Interfaces.GameDefinition;
 
 public class SudokuGameDefinition implements GameDefinition<SudokuMove, SudokuState> {
+    private static SudokuGameDefinition instance;
+
     @Override
     public boolean isAcceptable(@NotNull SudokuState s) {
         boolean[] temp = new boolean[10];
@@ -26,7 +28,7 @@ public class SudokuGameDefinition implements GameDefinition<SudokuMove, SudokuSt
                     case 18, 19, 20, 21, 22, 23, 24, 25, 26:
                         int x = sectionId%3;
                         int y = (sectionId - 18)/3;
-                        sectionMask[i] = squareMask[i] + 3*x + 9*y;
+                        sectionMask[i] = squareMask[i] + 3*x + 27*y;
                 }
             }
 
@@ -59,4 +61,12 @@ public class SudokuGameDefinition implements GameDefinition<SudokuMove, SudokuSt
         fields[m.squareId] = m.value;
         return new SudokuState(fields, s.getProtectedFields());
     }
+
+    public static SudokuGameDefinition getInstance(){
+        if(instance == null)
+            instance = new SudokuGameDefinition();
+
+        return  instance;
+    }
+
 }

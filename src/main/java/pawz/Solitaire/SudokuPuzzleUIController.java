@@ -21,6 +21,7 @@ public class SudokuPuzzleUIController {
         this.model = model;
         commandHandlers = new ArrayList<>();
         registerCommandHandlers();
+
     }
 
     private void  registerCommandHandlers(){

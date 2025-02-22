@@ -1,5 +1,6 @@
 package pawz;
 
+import org.jetbrains.annotations.NotNull;
 import pawz.Tournament.Interfaces.ByteEncodable;
 
 import java.io.ByteArrayOutputStream;
@@ -9,6 +10,11 @@ import java.io.IOException;
 public class Puzzle<Move extends ByteEncodable, State extends ByteEncodable> implements ByteEncodable{
     public State  state;
     public int puzzleId;
+
+    public Puzzle(@NotNull State state){
+        this.state = state;
+        puzzleId = -1;
+    }
 
     @Override
     public byte[] toBytes() {

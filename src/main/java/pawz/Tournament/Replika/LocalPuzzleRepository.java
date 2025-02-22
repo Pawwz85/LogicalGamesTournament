@@ -31,17 +31,26 @@ public class LocalPuzzleRepository<Move extends ByteEncodable, State extends Byt
     @Override
     public boolean persists(Puzzle<Move, State> puzzle) throws RepositoryException {
         puzzle.puzzleId = generateId();
+        Puzzle<Move, State> copy = getCopy(puzzle);
+        data.put(puzzle.puzzleId, copy);
         return update(puzzle);
     }
 
-    @Override
-    public boolean update(Puzzle<Move, State> puzzle) throws RepositoryException {
-        Puzzle<Move, State> copy = null;
+    private Puzzle<Move, State> getCopy(Puzzle<Move, State> puzzle) throws RepositoryException {
+        Puzzle<Move, State> copy;
         try {
             copy = PuzzleDecoder.fromBytes(puzzle.toBytes());
         } catch (IOException e) {
             throw new RepositoryException();
         }
+        return copy;
+    }
+
+    @Override
+    public boolean update(Puzzle<Move, State> puzzle) throws RepositoryException {
+        if(!data.containsKey(puzzle.puzzleId))
+            throw new RepositoryException();
+        Puzzle<Move, State> copy = getCopy(puzzle);
         data.put(puzzle.puzzleId, copy);
         return true;
     }

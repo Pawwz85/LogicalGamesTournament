@@ -34,7 +34,7 @@ public class TicketDashboard {
 
     private void displayLabels(){
         StringTableFormatter.RowBuilder builder = tableFormatter.getRowBuilder();
-        builder.putString("Ticket ID").putString("Owner ID").putString("Phase").putString("Solving Time").display();
+        builder.putString("Ticket ID").putString("Owner ID").putString("Phase").putString("Time Since Start").display();
     }
 
     private void displayTicket(PuzzleSolutionTicketDTO<SudokuMove, SudokuState> dto){

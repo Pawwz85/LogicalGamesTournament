@@ -40,7 +40,11 @@ public class LocalSolutionTicketService<Move extends ByteEncodable, State extend
 
     @Override
     public Collection<IPuzzleSolutionTicketProxy<Move, State>> getAllOwnedTickets(IServiceSession session) {
-        return this.repo.getTicketsByPlayerID(session.getSessionId()).stream().map(ticket -> (IPuzzleSolutionTicketProxy<Move, State>)ticket).toList();
+        return this.repo.getAllTickets()
+                .stream()
+                .filter(ticket -> ticket.playerID == session.getSessionId())
+                .map(ticket -> (IPuzzleSolutionTicketProxy<Move, State>)ticket)
+                .toList();
     }
 
     @Override

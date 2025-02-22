@@ -29,27 +29,31 @@ public class LocalSolutionTicketRepository<Move extends ByteEncodable, State ext
     @Override
     public boolean persists(PuzzleSolutionTicket<Move, State> ticket) throws RepositoryException {
         ticket.ticketID = generateId();
-        PuzzleSolutionTicket<Move, State> copy = null;
-
-        try {
-            copy = ticketByteDecoder.fromBytes(ticket.toDto().toBytes());
-        } catch (IOException e) {
-            throw new RepositoryException();
-        }
+        PuzzleSolutionTicket<Move, State> copy = getCopy(ticket);
 
         idToTicket.put(ticket.ticketID, copy);
 
         return true;
     }
 
-    @Override
-    public boolean update(PuzzleSolutionTicket<Move, State> ticket) throws RepositoryException {
+    private PuzzleSolutionTicket<Move, State> getCopy(PuzzleSolutionTicket<Move, State> ticket) throws RepositoryException {
         PuzzleSolutionTicket<Move, State> copy = null;
+
         try {
             copy = ticketByteDecoder.fromBytes(ticket.toDto().toBytes());
         } catch (IOException e) {
             throw new RepositoryException();
         }
+        return copy;
+    }
+
+    @Override
+    public boolean update(PuzzleSolutionTicket<Move, State> ticket) throws RepositoryException {
+
+        if(!idToTicket.containsKey(ticket.ticketID))
+            throw new RepositoryException();
+
+        PuzzleSolutionTicket<Move, State> copy = getCopy(ticket);
         idToTicket.put(ticket.ticketID, copy);
         return true;
     }
@@ -65,11 +69,6 @@ public class LocalSolutionTicketRepository<Move extends ByteEncodable, State ext
         return (result == null)?Optional.empty(): Optional.of(result);
     }
 
-    @Override
-    public Collection<PuzzleSolutionTicket<Move, State>> getTicketsByPlayerID(int playerID) {
-        Collection<PuzzleSolutionTicket<Move, State>> values = idToTicket.values();
-        return values.stream().filter((ticket -> ticket.playerID == playerID)).collect(Collectors.toList());
-    }
 
     // package-private by design!
     // Designed to be used by ReplikaSynchronisation Service only

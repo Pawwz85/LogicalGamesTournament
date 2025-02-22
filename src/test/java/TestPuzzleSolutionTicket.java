@@ -31,7 +31,7 @@ public class TestPuzzleSolutionTicket {
 
     private PuzzleSolutionTicket<IntegerMove, SimpleArithmeticPuzzleState> createTicketInSpecificPhase(@NotNull PuzzleSolutionTicketPhase phase){
         PuzzleSolutionTicket<IntegerMove, SimpleArithmeticPuzzleState> result = createTicket();
-        MockedSolutionDeclarationManager<IntegerMove> solutionDeclarationManager = new MockedSolutionDeclarationManager<IntegerMove>(result);
+        MockedSolutionDeclarationManager<IntegerMove, SimpleArithmeticPuzzleState> solutionDeclarationManager = new MockedSolutionDeclarationManager<>(result);
 
         List<IntegerMove> validSolution = Stream.of(3, 3, 3).map(IntegerMove::new).toList();
 
@@ -70,7 +70,7 @@ public class TestPuzzleSolutionTicket {
     @Test
     void testValidSolutionVerification(){
         PuzzleSolutionTicket<IntegerMove, SimpleArithmeticPuzzleState> ticket = createTicket();
-        MockedSolutionDeclarationManager<IntegerMove> solutionDeclarationManager = new MockedSolutionDeclarationManager<>(ticket);
+        MockedSolutionDeclarationManager<IntegerMove, SimpleArithmeticPuzzleState> solutionDeclarationManager = new MockedSolutionDeclarationManager<>(ticket);
         List<IntegerMove> solution = Stream.of(3, 3, 3).map(IntegerMove::new).toList();
 
         solutionDeclarationManager.prepare(solution);
@@ -89,7 +89,7 @@ public class TestPuzzleSolutionTicket {
     @Test
     void testInvalidSolutionRejection() {
         PuzzleSolutionTicket<IntegerMove, SimpleArithmeticPuzzleState> ticket = createTicket();
-        MockedSolutionDeclarationManager<IntegerMove> solutionDeclarationManager = new MockedSolutionDeclarationManager<>(ticket);
+        MockedSolutionDeclarationManager<IntegerMove, SimpleArithmeticPuzzleState> solutionDeclarationManager = new MockedSolutionDeclarationManager<>(ticket);
         List<IntegerMove> solution = Stream.of(3, -2, 3).map(IntegerMove::new).toList();
 
         solutionDeclarationManager.prepare(solution);

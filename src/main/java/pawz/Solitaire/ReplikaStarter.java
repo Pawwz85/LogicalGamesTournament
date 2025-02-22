@@ -20,7 +20,7 @@ public class ReplikaStarter {
     private final int amountOfPuzzlesToSolve = 3;
     private final int playerId = 7;
 
-    private GameDefinition<SudokuMove, SudokuState> gameDefinition = new SudokuGameDefinition();
+    private final GameDefinition<SudokuMove, SudokuState> gameDefinition = SudokuGameDefinition.getInstance();
 
     public Optional<TournamentReplika<SudokuMove, SudokuState>> getBootedReplika(){
         try {
@@ -35,10 +35,7 @@ public class ReplikaStarter {
 
 
     private Puzzle<SudokuMove, SudokuState> generatePuzzle(){
-        Puzzle<SudokuMove, SudokuState> puzzle = new Puzzle<>();
-        // TODO: Write a custom sudoku state generator
-        puzzle.state = new SudokuState();
-        return puzzle;
+        return new Puzzle<>(new SudokuState());
     }
 
     private LocalPuzzleRepository<SudokuMove, SudokuState> createPuzzleRepository() throws RepositoryException {
@@ -47,8 +44,7 @@ public class ReplikaStarter {
         LocalPuzzleRepository<SudokuMove, SudokuState> repository = new LocalPuzzleRepository<>(puzzleDecoder);
 
         for(SudokuState state: SudokuLoader.createSudokuStates()){
-            Puzzle<SudokuMove, SudokuState> puzzle = new Puzzle<>();
-            puzzle.state = state;
+            Puzzle<SudokuMove, SudokuState> puzzle = new Puzzle<>(state);
             repository.persists(puzzle);
         }
 

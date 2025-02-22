@@ -15,5 +15,4 @@ public interface IPuzzleSolutionTicketRepository<Move extends ByteEncodable, Sta
     boolean update(PuzzleSolutionTicket<Move, State> ticket) throws RepositoryException;
     Collection<PuzzleSolutionTicket<Move, State>> getAllTickets();
     Optional<PuzzleSolutionTicket<Move, State>> getByID(int tickedID);
-    Collection<PuzzleSolutionTicket<Move, State>> getTicketsByPlayerID(int playerID);
 }

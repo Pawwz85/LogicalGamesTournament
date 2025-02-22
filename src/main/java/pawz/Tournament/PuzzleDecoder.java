@@ -22,14 +22,14 @@ public class PuzzleDecoder<Move extends ByteEncodable, State extends ByteEncodab
 
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(bytes);
         DataInputStream stream = new DataInputStream(byteArrayInputStream);
-        Puzzle<Move, State> result = new Puzzle<>();
+
 
         int puzzleId = stream.readInt();
         int stateLength = stream.readInt();
         byte[] state = stream.readNBytes(stateLength);
 
+        Puzzle<Move, State> result = new Puzzle<>(stateByteDecoder.fromBytes(state));
         result.puzzleId = puzzleId;
-        result.state = stateByteDecoder.fromBytes(state);
 
         return result;
     }

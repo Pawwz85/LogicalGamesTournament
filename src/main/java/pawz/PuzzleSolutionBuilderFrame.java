@@ -15,7 +15,6 @@ public class PuzzleSolutionBuilderFrame<Move extends ByteEncodable, State extend
     private @NotNull State currentState;
     private final @NotNull GameDefinition<Move, State> gameDefinition;
 
-
     private final List<Move> solution = new ArrayList<>();
 
     private final Collection<Flow.Subscriber<? super PuzzleSolutionBuilderFrame<Move, State>>> subscribers = new ArrayList<>();
@@ -66,5 +65,9 @@ public class PuzzleSolutionBuilderFrame<Move extends ByteEncodable, State extend
     @NotNull
     public State getCurrentState(){
         return currentState;
+    }
+
+    public List<Move> getSolution() {
+        return solution;
     }
 }
