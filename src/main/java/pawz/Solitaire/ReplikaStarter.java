@@ -26,7 +26,7 @@ public class ReplikaStarter {
         try {
             LocalPuzzleRepository<SudokuMove, SudokuState> puzzleRepository = createPuzzleRepository();
             LocalSolutionTicketRepository<SudokuMove, SudokuState> ticketRepository = createFilledTicketRepository(puzzleRepository);
-            TournamentReplika<SudokuMove, SudokuState> result = new TournamentReplika<>(puzzleRepository, ticketRepository);
+            TournamentReplika<SudokuMove, SudokuState> result = new TournamentReplika<>(puzzleRepository, ticketRepository, gameDefinition);
             return Optional.of(result);
         } catch (RepositoryException e){
             return Optional.empty();
@@ -46,8 +46,12 @@ public class ReplikaStarter {
         PuzzleDecoder<SudokuMove, SudokuState> puzzleDecoder = new PuzzleDecoder<>(new SudokuStateDecoder());
         LocalPuzzleRepository<SudokuMove, SudokuState> repository = new LocalPuzzleRepository<>(puzzleDecoder);
 
-        for(int i = 0; i< amountOfPuzzlesToSolve; ++i)
-            repository.persists(generatePuzzle());
+        for(SudokuState state: SudokuLoader.createSudokuStates()){
+            Puzzle<SudokuMove, SudokuState> puzzle = new Puzzle<>();
+            puzzle.state = state;
+            repository.persists(puzzle);
+        }
+
 
         return repository;
     }

@@ -70,5 +70,12 @@ public class LocalSolutionTicketRepository<Move extends ByteEncodable, State ext
         Collection<PuzzleSolutionTicket<Move, State>> values = idToTicket.values();
         return values.stream().filter((ticket -> ticket.playerID == playerID)).collect(Collectors.toList());
     }
+
+    // package-private by design!
+    // Designed to be used by ReplikaSynchronisation Service only
+    void clear(){
+        idSequence = 0;
+        idToTicket.clear();
+    }
 }
 

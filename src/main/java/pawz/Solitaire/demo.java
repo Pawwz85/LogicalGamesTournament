@@ -3,11 +3,9 @@ package pawz.Solitaire;
 import pawz.PuzzleSolutionBuilderFrame;
 import pawz.Puzzle;
 import pawz.Solitaire.CLI.*;
-import pawz.Tournament.Exceptions.AuthenticationException;
 import pawz.Tournament.Interfaces.IServiceSession;
 import pawz.Tournament.Replika.TournamentReplika;
 import pawz.Tournament.SessionType;
-import pawz.Tournament.TimeFormatter;
 
 import java.util.Collection;
 import java.util.Map;
@@ -32,10 +30,6 @@ public class demo {
             return 7;
         }
 
-        @Override
-        public void authenticate(String login, String password) throws AuthenticationException {
-
-        }
     }
 
     public static void main(String[] args) throws NotEnoughArgumentsException {

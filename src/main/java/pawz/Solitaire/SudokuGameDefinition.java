@@ -24,7 +24,9 @@ public class SudokuGameDefinition implements GameDefinition<SudokuMove, SudokuSt
                         sectionMask[i] = (sectionId - 9) + 9*i;
                         break;
                     case 18, 19, 20, 21, 22, 23, 24, 25, 26:
-                        sectionMask[i] = squareMask[i] + (sectionId - 18)*3;
+                        int x = sectionId%3;
+                        int y = (sectionId - 18)/3;
+                        sectionMask[i] = squareMask[i] + 3*x + 9*y;
                 }
             }
 
@@ -45,7 +47,7 @@ public class SudokuGameDefinition implements GameDefinition<SudokuMove, SudokuSt
         if(m.squareId < 0 || m.squareId >= fields.length)
             return false;
 
-        if (fields[m.squareId] != 0)
+        if (s.isProtected(m.squareId))
             return  false;
 
         return m.value >= 1 && m.value < 10;    }
@@ -55,6 +57,6 @@ public class SudokuGameDefinition implements GameDefinition<SudokuMove, SudokuSt
     public SudokuState makeMove(@NotNull SudokuState s, @NotNull SudokuMove m) {
         int[] fields = s.getFields();
         fields[m.squareId] = m.value;
-        return new SudokuState(fields);
+        return new SudokuState(fields, s.getProtectedFields());
     }
 }

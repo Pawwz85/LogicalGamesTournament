@@ -7,5 +7,4 @@ public interface IServiceSession {
     SessionType getSessionType();
     boolean isAuthenticated();
     int getSessionId();
-    void authenticate(String login, String password) throws AuthenticationException;
 }

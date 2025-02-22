@@ -23,7 +23,7 @@ public class LocalSolutionTicketService<Move extends ByteEncodable, State extend
     }
 
     private  void checkOwnership(IServiceSession session, PuzzleSolutionTicket<Move, State> ticket) throws OwnershipException{
-        if(!session.isAuthenticated() || session.getSessionId() != ticket.playerID)
+        if(session.getSessionId() != ticket.playerID)
             throw new OwnershipException();
     }
 

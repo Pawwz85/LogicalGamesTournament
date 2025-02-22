@@ -7,85 +7,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2ab2b01-cd5a-4b9f-bcb4-eaca217b4188" name="Changes" comment="Development Snapshot">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Puzzle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/PuzzleSolutionBuilderFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/CLI/BasicCommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/CLI/BasicCommandHandlerBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/CLI/CommandParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/CLI/ICommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/CLI/ImmutablePair.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/CLI/NotEnoughArgumentsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/CLI/StringTableFormatter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/ReplikaStarter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/SudokuGameDefinition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/SudokuMove.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/SudokuMoveDecoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/SudokuPuzzle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/SudokuPuzzleUIController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/SudokuPuzzleUIModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/SudokuPuzzleUIView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/SudokuState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/SudokuStateDecoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/TicketDashboard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/demo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/DTO/PuzzleSolutionTicketByteDecoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/DTO/PuzzleSolutionTicketDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/DTO/PuzzleSolutionTicketDTOByteDecoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Exceptions/AuthenticationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Exceptions/IllegalMoveException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Exceptions/NotPreparedException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Exceptions/OwnershipException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Exceptions/RepositoryException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Exceptions/WrongStateException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Interfaces/ByteDecoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Interfaces/ByteEncodable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Interfaces/GameDefinition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Interfaces/IPuzzleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Interfaces/IPuzzleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Interfaces/IPuzzleSolutionTicketProxy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Interfaces/IPuzzleSolutionTicketRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Interfaces/IPuzzleSolutionTicketService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Interfaces/IServiceSession.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Interfaces/ISolutionDeclarationManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/PuzzleDecoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/PuzzleSolutionDigester.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/PuzzleSolutionTicket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/PuzzleSolutionTicketPhase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/LocalPuzzleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/LocalPuzzleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/LocalSolutionTicketRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/LocalSolutionTicketService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/TournamentReplika.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/SessionType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/TimeFormatter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/TournamentClient/LogicalTournamentClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/TournamentClient/PuzzleFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/python/Components/Components.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/python/Components/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/python/UI/UISchema.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/python/UI/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/python/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/AbstractBehavioralTests/TestByteDecoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Mockups/IntegerMove.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Mockups/IntegerMoveByteDecoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Mockups/MockedSolutionDeclarationManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Mockups/SimpleArithmeticGameDefinition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Mockups/SimpleArithmeticPuzzleState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Mockups/SimpleArithmeticPuzzleStateByteDecoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/TestBehavioralsForMockups/TestIntegerMoveByteEncoding.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/TestBehavioralsForMockups/TestSimpleArithmeticPuzzleStateByteEncoding.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/TestPuzzleSolutionTicket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/TestPuzzleSolutionTicketDTOByteEncoding.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="a2ab2b01-cd5a-4b9f-bcb4-eaca217b4188" name="Changes" comment="Development Snapshot, with simple demo">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Auth/DefaultSigner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Auth/ISigner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Auth/SessionHeader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Auth/SessionStore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Auth/SignedMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Auth/UserSession.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Boot/BootConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Boot/Device.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Boot/NetworkConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Boot/TemporaryBootDataLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Boot/UserIdentity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Boot/bootTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/P2PClient/PuzzleServiceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/P2PClient/Request.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/P2PClient/TicketServiceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/SudokuLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/SudokuPainter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Exceptions/SynchronisationError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Interfaces/ByteEncoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/PlainByteEncoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/ReplikaSynchronisationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/ServiceReplika.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/python/FancyAttributes.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/python/Components/FancyAttributes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/python/VirtualView.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/python/Components/VirtualView.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/ReplikaStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/ReplikaStarter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/SudokuGameDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/SudokuGameDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/SudokuPuzzleUIView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/SudokuPuzzleUIView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/SudokuState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/SudokuState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Solitaire/demo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Interfaces/IServiceSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Interfaces/IServiceSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/LocalPuzzleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/LocalPuzzleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/LocalSolutionTicketRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/LocalSolutionTicketRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/LocalSolutionTicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/LocalSolutionTicketService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/TournamentReplika.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/TournamentReplika.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +55,7 @@
         <option value="Python Script" />
         <option value="Enum" />
         <option value="Interface" />
+        <option value="Record" />
         <option value="Class" />
       </list>
     </option>
@@ -122,6 +79,7 @@
   &quot;keyToString&quot;: {
     &quot;Application.CLITest.executor&quot;: &quot;Run&quot;,
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.bootTest.executor&quot;: &quot;Run&quot;,
     &quot;Application.demo.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.All in LogicalGamesTournament.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.TestByteDecoder.executor&quot;: &quot;Run&quot;,
@@ -182,6 +140,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="bootTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pawz.Boot.bootTest" />
+      <module name="LogicalGamesTournament" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pawz.Boot.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="demo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="pawz.Solitaire.demo" />
       <module name="LogicalGamesTournament" />
@@ -213,23 +184,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestPuzzleSolutionTicket.testInvalidHash" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="LogicalGamesTournament" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestPuzzleSolutionTicket" />
-      <option name="METHOD_NAME" value="testInvalidHash" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.demo" />
+        <item itemvalue="Application.bootTest" />
         <item itemvalue="Application.CLITest" />
         <item itemvalue="JUnit.All in LogicalGamesTournament" />
         <item itemvalue="JUnit.TestPuzzleSolutionTicket.TicketThrowsExceptionWhenMethodIsCalledInWrongPhase" />
-        <item itemvalue="JUnit.TestPuzzleSolutionTicket.testInvalidHash" />
       </list>
     </recent_temporary>
   </component>
@@ -258,13 +219,42 @@
       <option name="project" value="LOCAL" />
       <updated>1735090991690</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Development Snapshot, with simple demo">
+      <option name="closed" value="true" />
+      <created>1739983226854</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1739983226854</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Development Snapshot, with simple demo">
+      <option name="closed" value="true" />
+      <created>1739983263613</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1739983263613</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Original commit.&#10;&#10;This commit is focused on providing interfaces that allow User to define his custom games." />
     <MESSAGE value="Added a skeleton of a layout tree" />
     <MESSAGE value="Development Snapshot" />
-    <option name="LAST_COMMIT_MESSAGE" value="Development Snapshot" />
+    <MESSAGE value="Development Snapshot, with simple demo." />
+    <MESSAGE value="Development Snapshot, with simple demo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Development Snapshot, with simple demo" />
   </component>
 </project>

@@ -22,9 +22,10 @@ public class SudokuPuzzleUIView {
         System.out.print("\n");
     }
 
-    private void renderSudokuLine(SudokuState state, int lineNumber){
+    private void renderSudokuLine(SudokuState state, int lineNumber, SudokuPainter.ColorMask mask){
         renderPadding();
         int fieldValue;
+        String fieldDisplay;
         for(int i = 0; i < 3; ++i){
             System.out.print(verticalDelimiter);
             System.out.print(" ");
@@ -32,7 +33,7 @@ public class SudokuPuzzleUIView {
                 fieldValue = state.getFields()[lineNumber*9 + 3 * i + j];
 
                 if(fieldValue != 0)
-                    System.out.print(fieldValue);
+                    SudokuPainter.printColored(mask,lineNumber*9 + 3 * i + j, String.valueOf(fieldValue));
                 else
                     System.out.print(emptySymbol);
 
@@ -61,11 +62,12 @@ public class SudokuPuzzleUIView {
             - - - - - - - - - - - - -
          */
 
+        SudokuPainter.ColorMask mask = SudokuPainter.determineColors(state);
         for(int lineNumber = 0; lineNumber < 9; ++lineNumber)
         {
             if(lineNumber % 3 == 0)
                 renderHorizontalLine();
-            renderSudokuLine(state, lineNumber);
+            renderSudokuLine(state, lineNumber, mask);
         }
         renderHorizontalLine();
         System.out.println(additionalText);

@@ -56,4 +56,11 @@ public class LocalPuzzleRepository<Move extends ByteEncodable, State extends Byt
     public Collection<Puzzle<Move, State>> getAll() {
         return data.values();
     }
+
+    // package-private by design!
+    // Designed to be used by ReplikaSynchronisation Service only
+    void clear(){
+            idSequence = 0;
+            data.clear();
+    }
 }
