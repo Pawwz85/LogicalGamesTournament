@@ -33,7 +33,7 @@ public class TestLocalPuzzleService {
                 .boxed()
                 .map(I -> new SimpleArithmeticPuzzleState(10, I))
                 .map(state-> new Puzzle<IntegerMove, SimpleArithmeticPuzzleState>(state))
-                .toList();
+                .collect(Collectors.toList());
 
         repo.persists(puzzles.get(0));
         repo.persists(puzzles.get(1));

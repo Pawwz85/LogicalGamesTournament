@@ -3,28 +3,19 @@ package pawz.Boot;
 import com.google.gson.JsonElement;
 import com.google.gson.*;
 import com.google.gson.JsonParser;
-import com.google.gson.JsonParser;
-import org.bouncycastle.asn1.sec.ECPrivateKey;
-import org.bouncycastle.jce.ECNamedCurveTable;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
-import org.bouncycastle.jce.spec.ECNamedCurveParameterSpec;
-import org.bouncycastle.jce.spec.ECNamedCurveSpec;
-import org.bouncycastle.jce.spec.ECPrivateKeySpec;
 import org.bouncycastle.util.io.pem.PemObject;
 import org.bouncycastle.util.io.pem.PemReader;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.*;
-import java.math.BigInteger;
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
-import java.nio.file.OpenOption;
 import java.nio.file.Path;
 import java.security.*;
 import java.security.spec.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -158,31 +149,39 @@ public class TemporaryBootDataLoader {
         );
     }
 
-    private Optional<Device> createDevice(JsonObject userInfo){
+    private Optional<NodeInfo> createDevice(JsonObject userInfo){
 
-        String ipAddress;
+        int replicaId;
+        String host;
         int port;
+        int pbftPort;
+        String token;
 
-        if(userInfo.get("port") == null || userInfo.get("ip_address") == null)
+        if(userInfo.get("port") == null || userInfo.get("address") == null ||
+                userInfo.get("pbft_port") == null || userInfo.get("id") == null ||
+            userInfo.get("token") == null)
             return Optional.empty();
 
         try{
-            ipAddress = userInfo.get("ip_address").getAsString();
-            port =userInfo.get("port").getAsInt();
+            replicaId = userInfo.get("id").getAsInt();
+            host = userInfo.get("host").getAsString();
+            port = userInfo.get("port").getAsInt();
+            pbftPort = userInfo.get("pbft_port").getAsInt();
+            token = userInfo.get("token").getAsString();
         } catch (JsonSyntaxException e){
             return Optional.empty();
         }
 
 
-        return Optional.of(new Device(
-                new Device.IPAddress(Device.IPVersion.V4, ipAddress),
-                port
+        return Optional.of(new NodeInfo(
+                replicaId, token, host, pbftPort, port
         ));
+
     }
 
-    public List<Device> loadDevices(){
+    public List<NodeInfo> loadNodeInfo(){
         List<Path> userDirectories = getUserDirectories();
-        List<Device> devices = new ArrayList<>();
+        List<NodeInfo> nodeInfoList = new ArrayList<>();
 
         for(Path p : userDirectories){
             Path userInfoPath = Path.of(p.toAbsolutePath() + "/user_info.json");
@@ -190,12 +189,12 @@ public class TemporaryBootDataLoader {
 
             if(optionalUserInfo.isPresent()){
                 JsonObject userInfo = optionalUserInfo.get();
-                Optional<Device> dev = createDevice(userInfo);
-                dev.ifPresent(devices::add);
+                Optional<NodeInfo> dev = createDevice(userInfo);
+                dev.ifPresent(nodeInfoList::add);
             }
 
         }
 
-        return devices;
+        return nodeInfoList;
     };
 }

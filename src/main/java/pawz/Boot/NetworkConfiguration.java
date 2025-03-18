@@ -1,15 +1,14 @@
 package pawz.Boot;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class NetworkConfiguration {
     private final int tolerance;
-    private final List<Device> devices;
+    private final List<NodeInfo> nodeInfoList;
 
-    public NetworkConfiguration(int f, List<Device> devices){
+    public NetworkConfiguration(int f, List<NodeInfo> nodeInfoList){
         tolerance = f;
-        this.devices = devices;
+        this.nodeInfoList = nodeInfoList;
     }
 
 
@@ -21,8 +20,8 @@ public class NetworkConfiguration {
         return tolerance;
     }
 
-    public List<Device> getDevices() {
-        return devices;
+    public List<NodeInfo> getNodeInfoList() {
+        return nodeInfoList;
     }
 
 }

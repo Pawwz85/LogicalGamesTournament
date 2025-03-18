@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class TestLocalTicketRepository {
 
@@ -99,7 +100,7 @@ public class TestLocalTicketRepository {
         List<PuzzleSolutionTicket<IntegerMove, SimpleArithmeticPuzzleState>> tickets = currentValues.stream()
                 .map(Integer -> new SimpleArithmeticPuzzleState(10, Integer))
                 .map(state -> new PuzzleSolutionTicket<>(0, -1, state, SimpleArithmeticGameDefinition.getInstance()))
-                .toList();
+                .collect(Collectors.toList());
 
         for(var t: tickets)
             repository.persists(t);

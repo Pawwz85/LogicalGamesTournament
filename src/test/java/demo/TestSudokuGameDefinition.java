@@ -1,10 +1,9 @@
 package demo;
 
 import AbstractBehavioralTests.TestGameDefinition;
-import pawz.Solitaire.SudokuGameDefinition;
-import pawz.Solitaire.SudokuMove;
-import pawz.Solitaire.SudokuState;
-import pawz.Tournament.Interfaces.GameDefinition;
+import pawz.demo.SudokuGameDefinition;
+import pawz.demo.SudokuMove;
+import pawz.demo.SudokuState;
 
 import java.util.ArrayList;
 import java.util.Collection;

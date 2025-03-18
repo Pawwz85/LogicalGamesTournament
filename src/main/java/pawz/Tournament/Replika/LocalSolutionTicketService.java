@@ -8,6 +8,7 @@ import pawz.Tournament.PuzzleSolutionTicket;
 
 import java.util.Collection;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class LocalSolutionTicketService<Move extends ByteEncodable, State extends ByteEncodable>
         implements IPuzzleSolutionTicketService<Move, State> {
@@ -44,7 +45,7 @@ public class LocalSolutionTicketService<Move extends ByteEncodable, State extend
                 .stream()
                 .filter(ticket -> ticket.playerID == session.getSessionId())
                 .map(ticket -> (IPuzzleSolutionTicketProxy<Move, State>)ticket)
-                .toList();
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -55,6 +56,6 @@ public class LocalSolutionTicketService<Move extends ByteEncodable, State extend
 
     @Override
     public Collection<PuzzleSolutionTicketDTO<Move, State>> getAllTicketsRecords() {
-        return repo.getAllTickets().stream().map(PuzzleSolutionTicket::toDto).toList();
+        return repo.getAllTickets().stream().map(PuzzleSolutionTicket::toDto).collect(Collectors.toList());
     }
 }

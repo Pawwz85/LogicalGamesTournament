@@ -6,4 +6,7 @@ public interface GameDefinition<Move extends ByteEncodable,  State extends ByteE
     boolean isAcceptable(@NotNull State s);
     boolean isMoveLegal(@NotNull State s, @NotNull Move m);
     @NotNull State makeMove(@NotNull State s, @NotNull Move m);
+
+    ByteDecoder<Move> moveByteDecoder();
+    ByteDecoder<State> stateByteDecoder();
 }

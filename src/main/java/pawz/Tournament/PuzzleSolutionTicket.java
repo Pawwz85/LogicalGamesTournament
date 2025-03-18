@@ -39,13 +39,13 @@ public class PuzzleSolutionTicket<Move extends ByteEncodable, State extends Byte
         this.moveList = dto.solution;
         this.initialState = dto.initialState;
 
-        this.phase = switch (dto.phase){
-            case 0 -> PuzzleSolutionTicketPhase.NotSolved;
-            case 1 -> PuzzleSolutionTicketPhase.SolutionDeclared;
-            case 2 -> PuzzleSolutionTicketPhase.SolutionSubmitted;
-            case 3 -> PuzzleSolutionTicketPhase.SolutionRejected;
-            case 4 -> PuzzleSolutionTicketPhase.SolutionVerified;
-            default -> PuzzleSolutionTicketPhase.SolutionRejected;
+         switch (dto.phase){
+            case 0 : this.phase = PuzzleSolutionTicketPhase.NotSolved; break;
+            case 1 : this.phase =  PuzzleSolutionTicketPhase.SolutionDeclared; break;
+            case 2 : this.phase =  PuzzleSolutionTicketPhase.SolutionSubmitted; break;
+            case 3 : this.phase =  PuzzleSolutionTicketPhase.SolutionRejected; break;
+            case 4 : this.phase =  PuzzleSolutionTicketPhase.SolutionVerified; break;
+            default : this.phase =  PuzzleSolutionTicketPhase.SolutionRejected; break;
         };
 
         this.gameDefinition = gameDefinition;
@@ -72,7 +72,7 @@ public class PuzzleSolutionTicket<Move extends ByteEncodable, State extends Byte
 
     private byte[] computeActualHash() throws WrongStateException {
         switch (this.phase){
-            case NotSolved, SolutionDeclared -> throw new WrongStateException();
+            case NotSolved: case SolutionDeclared: throw new WrongStateException();
         }
         PuzzleSolutionDigester<Move> digester = new PuzzleSolutionDigester<>();
         return digester.digestSolution(playerID, moveList);
@@ -136,7 +136,7 @@ public class PuzzleSolutionTicket<Move extends ByteEncodable, State extends Byte
 
     public List<Move> getMoveList() throws WrongStateException{
         switch (this.phase){
-            case NotSolved, SolutionDeclared -> throw new WrongStateException();
+            case NotSolved: case SolutionDeclared: throw new WrongStateException();
         }
         return moveList;
     }
@@ -154,12 +154,12 @@ public class PuzzleSolutionTicket<Move extends ByteEncodable, State extends Byte
         result.initialState = initialState;
         result.declaredSolutionHash = declaredHash;
         result.solution = moveList;
-        result.phase = switch (phase){
-            case NotSolved -> 0;
-            case SolutionDeclared -> 1;
-            case SolutionSubmitted -> 2;
-            case SolutionRejected -> 3;
-            case SolutionVerified -> 4;
+        switch (phase){
+            case NotSolved : result.phase = 0; break;
+            case SolutionDeclared : result.phase = 1; break;
+            case SolutionSubmitted : result.phase = 2; break;
+            case SolutionRejected : result.phase = 3; break;
+            case SolutionVerified : result.phase = 4; break;
         };
 
         return result;

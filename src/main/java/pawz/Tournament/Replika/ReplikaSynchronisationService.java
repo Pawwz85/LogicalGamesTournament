@@ -1,5 +1,7 @@
 package pawz.Tournament.Replika;
 
+import org.bouncycastle.crypto.digests.MD5Digest;
+import org.jetbrains.annotations.NotNull;
 import pawz.Puzzle;
 import pawz.Tournament.DTO.PuzzleSolutionTicketDTO;
 import pawz.Tournament.Exceptions.RepositoryException;
@@ -10,7 +12,10 @@ import pawz.Tournament.Interfaces.IPuzzleService;
 import pawz.Tournament.Interfaces.IPuzzleSolutionTicketService;
 import pawz.Tournament.PuzzleSolutionTicket;
 
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class ReplikaSynchronisationService<Move extends ByteEncodable, State extends ByteEncodable> {
     private final LocalPuzzleRepository<Move, State> puzzleRepository;
@@ -63,5 +68,50 @@ public class ReplikaSynchronisationService<Move extends ByteEncodable, State ext
             throw new SynchronisationError();
         }
     }
+
+    public byte[] calculatePuzzleRepositoryChecksum(){
+        MD5Digest digest = new MD5Digest();
+
+        List<byte[]> checksums = puzzleRepository.getAll()
+                .stream()
+                .map( p -> hashBytes(p.toBytes()))
+                .collect(Collectors.toList());
+
+        return xorChecksums(checksums);
+    }
+
+    public byte[] calculateTicketRepositoryChecksum(){
+        MD5Digest digest = new MD5Digest();
+
+        List<byte[]> checksums = ticketRepository.getAllTickets()
+                .stream()
+                .map( ticket -> hashBytes(ticket.toDto().toBytes()))
+                .collect(Collectors.toList());
+
+        return xorChecksums(checksums);
+    }
+
+    private static byte[] hashBytes(byte[] input) {
+        MD5Digest digest = new MD5Digest();
+        digest.update(input, 0, input.length);
+        byte[] hash = new byte[digest.getDigestSize()]; // 16 bytes
+        digest.doFinal(hash, 0);
+        return hash;
+    }
+
+    private static byte[] xorChecksums(List<byte[]> checksums) {
+        if (checksums.isEmpty()) {
+            return new byte[16]; // Return zeroed MD5-sized array if empty
+        }
+
+        byte[] result = new byte[16]; // MD5 produces 16-byte hashes
+        for (byte[] checksum : checksums) {
+            for (int i = 0; i < 16; ++i) {
+                result[i] ^= checksum[i];
+            }
+        }
+        return result;
+    }
+
 
 }

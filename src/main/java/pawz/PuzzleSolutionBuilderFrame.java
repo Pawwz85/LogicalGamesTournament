@@ -39,7 +39,7 @@ public class PuzzleSolutionBuilderFrame<Move extends ByteEncodable, State extend
 
     public void undoMove(){
         if(canUndo()){
-            solution.removeLast();
+            solution.remove(solution.size() - 1);
             currentState = initialState;
             for(Move m: solution)
                 currentState = gameDefinition.makeMove(currentState, m);

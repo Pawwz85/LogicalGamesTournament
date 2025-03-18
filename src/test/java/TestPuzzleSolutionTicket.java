@@ -11,6 +11,7 @@ import pawz.Tournament.PuzzleSolutionTicket;
 import pawz.Tournament.PuzzleSolutionTicketPhase;
 
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.fail;
@@ -33,29 +34,28 @@ public class TestPuzzleSolutionTicket {
         PuzzleSolutionTicket<IntegerMove, SimpleArithmeticPuzzleState> result = createTicket();
         MockedSolutionDeclarationManager<IntegerMove, SimpleArithmeticPuzzleState> solutionDeclarationManager = new MockedSolutionDeclarationManager<>(result);
 
-        List<IntegerMove> validSolution = Stream.of(3, 3, 3).map(IntegerMove::new).toList();
+        List<IntegerMove> validSolution = Stream.of(3, 3, 3).map(IntegerMove::new).collect(Collectors.toList());
 
         try {
             switch (phase) {
-                case NotSolved -> {
-                }
-                case SolutionDeclared -> {
+                case NotSolved : break;
+                case SolutionDeclared : {
                     solutionDeclarationManager.prepare(validSolution);
                     solutionDeclarationManager.declare();
-                }
+                } break;
 
-                case SolutionSubmitted -> {
+                case SolutionSubmitted : {
                     solutionDeclarationManager.prepare(validSolution);
                     solutionDeclarationManager.declare();
                     solutionDeclarationManager.commit();
-                }
-                case SolutionVerified -> {
+                } break;
+                case SolutionVerified : {
                     solutionDeclarationManager.prepare(validSolution);
                     solutionDeclarationManager.declare();
                     solutionDeclarationManager.commit();
                     result.verifySolution();
-                }
-                case SolutionRejected -> {
+                } break;
+                case SolutionRejected : {
                     result.declareSolution("Incorrect hash".getBytes(), 0);
                     result.commitSolution(validSolution);
                     result.verifySolution();
@@ -71,7 +71,7 @@ public class TestPuzzleSolutionTicket {
     void testValidSolutionVerification(){
         PuzzleSolutionTicket<IntegerMove, SimpleArithmeticPuzzleState> ticket = createTicket();
         MockedSolutionDeclarationManager<IntegerMove, SimpleArithmeticPuzzleState> solutionDeclarationManager = new MockedSolutionDeclarationManager<>(ticket);
-        List<IntegerMove> solution = Stream.of(3, 3, 3).map(IntegerMove::new).toList();
+        List<IntegerMove> solution = Stream.of(3, 3, 3).map(IntegerMove::new).collect(Collectors.toList());
 
         solutionDeclarationManager.prepare(solution);
 
@@ -90,7 +90,7 @@ public class TestPuzzleSolutionTicket {
     void testInvalidSolutionRejection() {
         PuzzleSolutionTicket<IntegerMove, SimpleArithmeticPuzzleState> ticket = createTicket();
         MockedSolutionDeclarationManager<IntegerMove, SimpleArithmeticPuzzleState> solutionDeclarationManager = new MockedSolutionDeclarationManager<>(ticket);
-        List<IntegerMove> solution = Stream.of(3, -2, 3).map(IntegerMove::new).toList();
+        List<IntegerMove> solution = Stream.of(3, -2, 3).map(IntegerMove::new).collect(Collectors.toList());
 
         solutionDeclarationManager.prepare(solution);
 
@@ -108,7 +108,7 @@ public class TestPuzzleSolutionTicket {
     @Test
     void testInvalidHash(){
         PuzzleSolutionTicket<IntegerMove, SimpleArithmeticPuzzleState> ticket = createTicket();
-        List<IntegerMove> solution = Stream.of(3, 3, 3).map(IntegerMove::new).toList();
+        List<IntegerMove> solution = Stream.of(3, 3, 3).map(IntegerMove::new).collect(Collectors.toList());
         try {
             ticket.declareSolution("BullshitHash".getBytes(), 0);
             ticket.commitSolution(solution);
@@ -130,7 +130,7 @@ public class TestPuzzleSolutionTicket {
               commitSolution / SolutionDeclared
               verifySolution / SolutionSubmitted
         */
-        List<IntegerMove> solution = Stream.of(3, 3, 3).map(IntegerMove::new).toList();
+        List<IntegerMove> solution = Stream.of(3, 3, 3).map(IntegerMove::new).collect(Collectors.toList());
         for (PuzzleSolutionTicketPhase ticketPhase : PuzzleSolutionTicketPhase.values()){
             var ticket = createTicketInSpecificPhase(ticketPhase);
 

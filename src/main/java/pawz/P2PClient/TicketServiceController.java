@@ -4,6 +4,9 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import org.jetbrains.annotations.NotNull;
+import pawz.DerivedImplementations.DeriveByteUtils;
+import pawz.DerivedImplementations.IDeriveByteUtils;
+import pawz.DerivedImplementations.PlainByteEncoder;
 import pawz.Tournament.DTO.PuzzleSolutionTicketDTO;
 import pawz.Tournament.Exceptions.OwnershipException;
 import pawz.Tournament.Exceptions.WrongStateException;
@@ -11,37 +14,36 @@ import pawz.Tournament.Interfaces.*;
 import pawz.Tournament.Replika.LocalSolutionTicketService;
 
 import java.io.IOException;
-import java.util.Base64;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class TicketServiceController<Move extends ByteEncodable, State extends ByteEncodable> {
 
     private final LocalSolutionTicketService<Move, State> service;
 
-    private final ByteDecoder<List<Move>> solutionDecoder;
+    private final ByteDecoder<Collection<Move>> solutionDecoder;
 
     private final ByteEncoder<PuzzleSolutionTicketDTO<Move, State>> ticketByteEncoder;
 
-    public TicketServiceController(LocalSolutionTicketService<Move, State> service, ByteDecoder<List<Move>> solutionDecoder, ByteEncoder<PuzzleSolutionTicketDTO<Move, State>> ticketByteEncoder) {
+    private final IDeriveByteUtils<PuzzleSolutionTicketDTO<Move, State>> deriveByteUtils = new DeriveByteUtils<>();
+
+    private final ByteEncoder<Collection<PuzzleSolutionTicketDTO<Move, State>>> collectionByteEncoder;
+
+    public TicketServiceController(LocalSolutionTicketService<Move, State> service, ByteDecoder<Move> moveByteDecoder) {
         this.service = service;
-        this.solutionDecoder = solutionDecoder;
-        this.ticketByteEncoder = ticketByteEncoder;
+        this.solutionDecoder = new DeriveByteUtils<Move>().collectionByteDecoder(moveByteDecoder);
+        this.ticketByteEncoder = new PlainByteEncoder<>();
+        this.collectionByteEncoder = deriveByteUtils.collectionByteEncoder(ticketByteEncoder);
     }
 
     public JsonObject getAllTickets(){
         JsonArray records = new JsonArray();
         Base64.Encoder encoder = Base64.getEncoder();
 
-        for(var ticket: service.getAllTicketsRecords()){
-            byte[] bytes = ticket.toBytes();
-            String encodedString = encoder.encodeToString(ticketByteEncoder.toBytes(ticket));
-            records.add(encodedString);
-        }
+        String tickets = encoder.encodeToString(collectionByteEncoder.toBytes(service.getAllTicketsRecords()));
 
         JsonObject response = new JsonObject();
         response.addProperty("http_status_code", 200);
-        response.add("tickets", records);
+        response.addProperty("tickets", tickets);
         return response;
     }
 
@@ -69,13 +71,13 @@ public class TicketServiceController<Move extends ByteEncodable, State extends B
     public JsonObject getTicket(Request request){
         Object idObject = request.params.get("ticket_id");
 
-        if(!(idObject instanceof Integer id)) {
+        if(!(idObject instanceof Integer)) {
             JsonObject response = new JsonObject();
             response.addProperty("http_status_code", 400);
             response.addProperty("cause", "Field 'ticket_id' should be an integer");
             return response;
         }
-
+        Integer id = (Integer) idObject;
         return getTicket(id);
     }
 
@@ -107,7 +109,7 @@ public class TicketServiceController<Move extends ByteEncodable, State extends B
         Object IdObject = request.params.get("ticket_id");
         Object hashObject = request.params.get("declared_hash");
 
-        if(!(IdObject instanceof Integer ticketID) || !(hashObject instanceof String hashBase64)){
+        if(!(IdObject instanceof Integer) || !(hashObject instanceof String)){
             JsonObject response = new JsonObject();
             response.addProperty("http_status_code", 400);
             response.addProperty("cause", "Field 'ticket_id' should be an integer and field " +
@@ -115,6 +117,8 @@ public class TicketServiceController<Move extends ByteEncodable, State extends B
             return response;
         }
 
+        Integer ticketID = (Integer) IdObject;
+        String hashBase64 = (String) hashObject;
         return declareTicket(ticketID, request.session, Base64.getDecoder().decode(hashBase64));
     }
 
@@ -145,7 +149,7 @@ public class TicketServiceController<Move extends ByteEncodable, State extends B
         Object IdObject = request.params.get("ticket_id");
         Object solutionObject = request.params.get("solution");
 
-        if(!(IdObject instanceof Integer ticketID) || !(solutionObject instanceof String solutionBase64)){
+        if(!(IdObject instanceof Integer) || !(solutionObject instanceof String)){
             JsonObject response = new JsonObject();
             response.addProperty("http_status_code", 400);
             response.addProperty("cause", "Field 'ticket_id' should be an integer and field " +
@@ -153,8 +157,11 @@ public class TicketServiceController<Move extends ByteEncodable, State extends B
             return response;
         }
 
+        Integer ticketID = (Integer) IdObject;
+        String solutionBase64 = (String) solutionObject;
+
         try {
-            List<Move> solution = solutionDecoder.fromBytes(Base64.getDecoder().decode(solutionBase64));
+            List<Move> solution = new ArrayList<>(solutionDecoder.fromBytes(Base64.getDecoder().decode(solutionBase64)));
             return submitSolution(ticketID, request.session, solution);
         } catch (IOException e){
             JsonObject response = new JsonObject();
