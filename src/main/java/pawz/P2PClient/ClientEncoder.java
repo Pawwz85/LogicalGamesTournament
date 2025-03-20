@@ -24,7 +24,7 @@ public class ClientEncoder implements com.gmail.woodyc40.pbft.ClientEncoder<Sign
         long timestamp = request.timestamp();
         String clientId = request.client().clientId();
         JsonObject root = new JsonObject();
-        root.addProperty("type", "REQUEST");
+        root.addProperty("type", "request");
 
         root.addProperty("operation", toBase64(op));
         root.addProperty("timestamp", timestamp);

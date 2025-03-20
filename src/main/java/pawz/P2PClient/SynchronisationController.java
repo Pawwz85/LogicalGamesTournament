@@ -12,6 +12,7 @@ import pawz.Tournament.Interfaces.ByteEncodable;
 import pawz.Tournament.Interfaces.ByteEncoder;
 import pawz.Tournament.Replika.LocalPuzzleService;
 import pawz.Tournament.Replika.LocalSolutionTicketService;
+import pawz.Tournament.Replika.ReplicaSnapshot;
 import pawz.Tournament.Replika.ReplikaSynchronisationService;
 
 import java.util.Base64;
@@ -55,13 +56,11 @@ public class SynchronisationController<Move extends ByteEncodable, State extends
 
         Function<byte[], String> toBase64 = b -> Base64.getEncoder().encodeToString(b);
 
-        Collection<Puzzle<Move, State>> puzzles = puzzleService.getAllPuzzles();
-        Collection<PuzzleSolutionTicketDTO<Move, State>> tickets = ticketService.getAllTicketsRecords();
+        ReplicaSnapshot<Move, State> snapshot = synchronisationService.getSnapshot();
 
         JsonObject response = new JsonObject();
         response.addProperty("http_status_code", 200);
-        response.addProperty("puzzle", toBase64.apply(puzzlesByteEncoder.toBytes(puzzles)));
-        response.addProperty("tickets", toBase64.apply(ticketsByteEncoder.toBytes(tickets)));
+        response.addProperty("snapshot", toBase64.apply(snapshot.toBytes()));
 
         return response;
     }

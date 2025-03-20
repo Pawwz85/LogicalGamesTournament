@@ -30,14 +30,14 @@ public class ReplikaSynchronisationService<Move extends ByteEncodable, State ext
     }
 
 
-    private void forcefullySetTicketRepository(Collection<PuzzleSolutionTicketDTO<Move, State>> ticketRecords) throws RepositoryException {
+    public void forcefullySetTicketRepository(Collection<PuzzleSolutionTicketDTO<Move, State>> ticketRecords) throws RepositoryException {
         ticketRepository.clear();
         for(var record: ticketRecords){
             ticketRepository.update(new PuzzleSolutionTicket<>(record, gameDefinition));
         }
     }
 
-    private void forcefullySetPuzzleRepository(Collection<Puzzle<Move, State>> puzzles) throws RepositoryException {
+    public void forcefullySetPuzzleRepository(Collection<Puzzle<Move, State>> puzzles) throws RepositoryException {
         puzzleRepository.clear();
 
         for(var record: puzzles)
@@ -113,5 +113,14 @@ public class ReplikaSynchronisationService<Move extends ByteEncodable, State ext
         return result;
     }
 
+    public ReplicaSnapshot<Move, State> getSnapshot(){
+        Collection<PuzzleSolutionTicketDTO<Move, State>> ticketRecords =
+                ticketRepository.getAllTickets().stream().map(PuzzleSolutionTicket::toDto)
+                        .collect(Collectors.toList());
+        return new ReplicaSnapshot<>(
+                ticketRecords,
+                this.puzzleRepository.getAll()
+        );
+    }
 
 }

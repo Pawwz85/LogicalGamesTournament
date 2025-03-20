@@ -96,9 +96,11 @@ public class TicketServiceController<Move extends ByteEncodable, State extends B
 
         } catch (OwnershipException e){
             response.addProperty("http_status_code", 403);
+            response.addProperty("exception", "OwnershipException");
             response.addProperty("cause", "User is not an owner of this solution ticket");
         } catch (WrongStateException e){
             response.addProperty("http_status_code", 403);
+            response.addProperty("exception", "WrongStateException");
             response.addProperty("cause", "This ticket was already declared.");
         }
 
@@ -137,9 +139,11 @@ public class TicketServiceController<Move extends ByteEncodable, State extends B
             }
         } catch (OwnershipException e){
             response.addProperty("http_status_code", 403);
+            response.addProperty("exception", "OwnershipException");
             response.addProperty("cause", "User is not an owner of this solution ticket");
         } catch (WrongStateException e){
             response.addProperty("http_status_code", 403);
+            response.addProperty("exception", "WrongStateException");
             response.addProperty("cause", "Solution can not be submitted now");
         }
         return response;
