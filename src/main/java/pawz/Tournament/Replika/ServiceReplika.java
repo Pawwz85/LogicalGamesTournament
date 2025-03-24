@@ -33,6 +33,7 @@ public class ServiceReplika<Move extends ByteEncodable, State extends ByteEncoda
         return object;
     }
 
+
     @Override
     public JsonObject compute(SignedMessage<byte[]> o) {
 
@@ -44,6 +45,7 @@ public class ServiceReplika<Move extends ByteEncodable, State extends ByteEncoda
         Request request;
         try{
             request = requestParser.fromBytes(o.payload(), sessionOptional.get());
+
         } catch (RequestParser.ParsingException e){
             return createErrorCodeResponse(e.toString(), 400);
         }

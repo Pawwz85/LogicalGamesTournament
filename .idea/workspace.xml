@@ -7,23 +7,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2ab2b01-cd5a-4b9f-bcb4-eaca217b4188" name="Changes" comment="Merged local development branch, which includes:&#10;- Implemented ReplicaClient and Replica interfaces&#10;- Implemented a web like architecture &#10;- Added an offline sudoku demonstration application&#10;- Provided a bunch of utilities for byte encoded data&#10;- Implemented a network layer&#10;- Implemented a pbft thread">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/P2PClient/ReplyListenerThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/P2PClient/ResultParsers/PuzzleServiceResultParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/P2PClient/ResultParsers/RemoteTicketStateMachineActionResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/P2PClient/ResultParsers/ReplicaChecksums.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/P2PClient/ResultParsers/SynchronisationServiceResultParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/P2PClient/ResultParsers/TicketServiceResultParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/P2PClient/SignedMessageFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Exceptions/MalformedResponseException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/ReplicaSnapshot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/ReplicaSnapshotDecoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Synchronisation/SynchronisationThread.java" afterDir="false" />
+    <list default="true" id="a2ab2b01-cd5a-4b9f-bcb4-eaca217b4188" name="Changes" comment="Implemented a synchronisation thread">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/ComponentPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/DTO/SolutionSubmissionRecord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/Internals/Component.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/Internals/EventLoop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/Internals/Observer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/Internals/ServiceProbe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/Internals/TournamentEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/Internals/TournamentEventFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/NamedEvents/NamedTournamentEvents.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/NamedEvents/PuzzleDashboardEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/NamedEvents/SubmissionDashboardEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/NamedEvents/SyncStatusEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/PuzzleDashboardComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/SolutionBuilderComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/SolutionBuilderFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/SubmissionDashboardComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/P2PClient/RemoteSolutionTicket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/TournamentFacade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/P2PClient/ClientEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/P2PClient/ClientEncoder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/P2PClient/SynchronisationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/P2PClient/SynchronisationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/P2PClient/TicketServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/P2PClient/TicketServiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/ReplikaSynchronisationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/ReplikaSynchronisationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/P2PClient/ReplyListenerThread.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/P2PClient/SignedMessageFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/P2PClient/SignedMessageFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/PuzzleSolutionBuilderFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/PuzzleSolutionBuilderFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/PBFTThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/PBFTThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/ServiceReplika.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/ServiceReplika.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Transport/MessageDispatchingThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Transport/MessageDispatchingThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Transport/ServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Transport/ServerThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,8 +47,8 @@
         <option value="Python Script" />
         <option value="Record" />
         <option value="Enum" />
-        <option value="JUnit5 Test Class" />
         <option value="Interface" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -156,9 +166,11 @@
       <recent name="" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="Components" />
       <recent name="pawz.Tournament.Synchronisation" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="Components.Internals" />
       <recent name="pawz.Transport" />
       <recent name="pawz.Tournament.Synchronisation" />
       <recent name="pawz.P2PClient" />
@@ -328,7 +340,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742326359538</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Implemented a synchronisation thread">
+      <option name="closed" value="true" />
+      <created>1742499284906</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1742499284906</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -352,6 +372,7 @@
     <MESSAGE value="- Added some basic prototypes of network module&#10;- Added color clues in demo version&#10;- Added unit tests for repository layer + LocalSolutionTicketService" />
     <MESSAGE value="- Implemented ReplicaClient and Replica interfaces&#10;- Implemented a web like architecture &#10;- Added an offline sudoku demonstration application&#10;- Provided a bunch of utilities for byte encoded data&#10;- Implemented a network layer" />
     <MESSAGE value="Merged local development branch, which includes:&#10;- Implemented ReplicaClient and Replica interfaces&#10;- Implemented a web like architecture &#10;- Added an offline sudoku demonstration application&#10;- Provided a bunch of utilities for byte encoded data&#10;- Implemented a network layer&#10;- Implemented a pbft thread" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merged local development branch, which includes:&#10;- Implemented ReplicaClient and Replica interfaces&#10;- Implemented a web like architecture &#10;- Added an offline sudoku demonstration application&#10;- Provided a bunch of utilities for byte encoded data&#10;- Implemented a network layer&#10;- Implemented a pbft thread" />
+    <MESSAGE value="Implemented a synchronisation thread" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented a synchronisation thread" />
   </component>
 </project>

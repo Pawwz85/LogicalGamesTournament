@@ -12,10 +12,10 @@ import java.util.concurrent.Flow;
 public class PuzzleSolutionBuilderFrame<Move extends ByteEncodable, State extends ByteEncodable> implements Flow.Publisher<PuzzleSolutionBuilderFrame> {
 
     private final @NotNull State initialState;
-    private @NotNull State currentState;
+    @NotNull State currentState;
     private final @NotNull GameDefinition<Move, State> gameDefinition;
 
-    private final List<Move> solution = new ArrayList<>();
+    List<Move> solution = new ArrayList<>();
 
     private final Collection<Flow.Subscriber<? super PuzzleSolutionBuilderFrame<Move, State>>> subscribers = new ArrayList<>();
 

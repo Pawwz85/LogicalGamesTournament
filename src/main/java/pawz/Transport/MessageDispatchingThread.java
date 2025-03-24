@@ -14,6 +14,8 @@ public class MessageDispatchingThread extends Thread {
 
     public final ConcurrentLinkedQueue<byte[]> queue = new ConcurrentLinkedQueue<>();
 
+
+
     public boolean exitFlag = false;
 
 

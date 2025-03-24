@@ -13,15 +13,13 @@ import java.security.PrivateKey;
 
 public class SignedMessageFactory {
 
-    private final byte[] signature;
     private final String sessionToken;
 
     private final PrivateKey privateKey;
 
     private final static DefaultSigner signer = new DefaultSigner();
 
-    public SignedMessageFactory(byte[] signature, String sessionToken, PrivateKey privateKey) {
-        this.signature = signature;
+    public SignedMessageFactory(String sessionToken, PrivateKey privateKey) {
         this.sessionToken = sessionToken;
         this.privateKey = privateKey;
     }

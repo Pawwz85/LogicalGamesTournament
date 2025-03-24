@@ -14,7 +14,7 @@ public class ServerThread extends Thread {
     private final ServerSocket socket;
 
 
-    public boolean isRunning;
+    public volatile boolean isRunning;
 
     private final List<SocketListenerThread> children = new ArrayList<>();
 
