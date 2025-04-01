@@ -26,7 +26,7 @@ private final GameDefinition<Move, State> gameDefinition;
     @Override
     protected SolutionBuilderFrame<Move, State> getCurrentSnapshot() {
         if(currentState != null && initialState != null)
-            return new SolutionBuilderFrame<>(initialState, currentState, solution);
+            return new SolutionBuilderFrame<>(initialState, currentState, solution, gameDefinition);
         else
             return null;
     }
@@ -44,7 +44,7 @@ private final GameDefinition<Move, State> gameDefinition;
     }
 
     public void addMove(Move m) {
-        if(currentState != null && initialState != null){
+        if(currentState != null && initialState != null && gameDefinition.isMoveLegal(currentState, m)){
             solution.add(m);
             currentState = gameDefinition.makeMove(currentState, m);
             notifyObservers();

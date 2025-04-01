@@ -33,7 +33,7 @@ public class ReplikaSynchronisationService<Move extends ByteEncodable, State ext
     public void forcefullySetTicketRepository(Collection<PuzzleSolutionTicketDTO<Move, State>> ticketRecords) throws RepositoryException {
         ticketRepository.clear();
         for(var record: ticketRecords){
-            ticketRepository.update(new PuzzleSolutionTicket<>(record, gameDefinition));
+            ticketRepository.forceUpdate(new PuzzleSolutionTicket<>(record, gameDefinition));
         }
     }
 
@@ -41,7 +41,10 @@ public class ReplikaSynchronisationService<Move extends ByteEncodable, State ext
         puzzleRepository.clear();
 
         for(var record: puzzles)
-            puzzleRepository.update(record);
+        {
+            System.out.println(record.puzzleId);
+            puzzleRepository.forceUpdate(record);
+        }
     }
 
     public void syncTicketRepository(IPuzzleSolutionTicketService<Move, State> trustedService) throws SynchronisationError {

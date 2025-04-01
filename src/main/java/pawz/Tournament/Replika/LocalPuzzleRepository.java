@@ -50,10 +50,18 @@ public class LocalPuzzleRepository<Move extends ByteEncodable, State extends Byt
     public boolean update(Puzzle<Move, State> puzzle) throws RepositoryException {
         if(!data.containsKey(puzzle.puzzleId))
             throw new RepositoryException();
+
         Puzzle<Move, State> copy = getCopy(puzzle);
         data.put(puzzle.puzzleId, copy);
         return true;
     }
+
+    public boolean forceUpdate(Puzzle<Move, State> puzzle) throws RepositoryException{
+        Puzzle<Move, State> copy = getCopy(puzzle);
+        data.put(puzzle.puzzleId, copy);
+        return true;
+    }
+
 
     @Override
     public Optional<Puzzle<Move, State>> getByID(int id) {

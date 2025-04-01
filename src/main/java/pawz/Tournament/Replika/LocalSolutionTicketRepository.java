@@ -76,5 +76,10 @@ public class LocalSolutionTicketRepository<Move extends ByteEncodable, State ext
         idSequence = 0;
         idToTicket.clear();
     }
+
+    public void forceUpdate(PuzzleSolutionTicket<Move, State> ticket) throws RepositoryException {
+        PuzzleSolutionTicket<Move, State> copy = getCopy(ticket);
+        idToTicket.put(ticket.ticketID, copy);
+    }
 }
 

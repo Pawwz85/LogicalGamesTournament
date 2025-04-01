@@ -157,7 +157,7 @@ public class TemporaryBootDataLoader {
         int pbftPort;
         String token;
 
-        if(userInfo.get("port") == null || userInfo.get("address") == null ||
+        if(userInfo.get("port") == null || userInfo.get("host") == null ||
                 userInfo.get("pbft_port") == null || userInfo.get("id") == null ||
             userInfo.get("token") == null)
             return Optional.empty();
@@ -190,6 +190,7 @@ public class TemporaryBootDataLoader {
             if(optionalUserInfo.isPresent()){
                 JsonObject userInfo = optionalUserInfo.get();
                 Optional<NodeInfo> dev = createDevice(userInfo);
+                System.out.println(userInfo.toString());
                 dev.ifPresent(nodeInfoList::add);
             }
 

@@ -16,7 +16,4 @@ public class BootConfiguration {
         this.userIdentities = userIdentities;
     }
 
-    public static BootConfiguration loadFromFile(Path path){
-        return null;
-    }
 }

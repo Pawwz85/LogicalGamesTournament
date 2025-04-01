@@ -7,33 +7,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2ab2b01-cd5a-4b9f-bcb4-eaca217b4188" name="Changes" comment="Implemented a synchronisation thread">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/ComponentPack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/DTO/SolutionSubmissionRecord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/Internals/Component.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/Internals/EventLoop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/Internals/Observer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/Internals/ServiceProbe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/Internals/TournamentEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/Internals/TournamentEventFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/NamedEvents/NamedTournamentEvents.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/NamedEvents/PuzzleDashboardEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/NamedEvents/SubmissionDashboardEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/NamedEvents/SyncStatusEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/PuzzleDashboardComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/SolutionBuilderComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/SolutionBuilderFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/SubmissionDashboardComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/P2PClient/RemoteSolutionTicket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/TournamentFacade.java" afterDir="false" />
+    <list default="true" id="a2ab2b01-cd5a-4b9f-bcb4-eaca217b4188" name="Changes" comment="Gathered all functionality in TournamentFacade">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/Control/SolutionFrameSelector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/GUI/ApplicationModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/GUI/ComponentWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/GUI/LightOutPuzzleDashboardView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/GUI/LightOutSolutionBuilderView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/GUI/MessageBox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/GUI/RootViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/GUI/SubmissionDashboardView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/GUI/Theme.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/LightOutGameDefinition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/LightOutMove.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/LightOutMoveDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/LightOutState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/LightOutStateDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/P2PClient/ReplyListenerThread.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/P2PClient/SignedMessageFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/P2PClient/SignedMessageFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/PuzzleSolutionBuilderFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/PuzzleSolutionBuilderFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/PBFTThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/PBFTThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/ServiceReplika.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/ServiceReplika.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Transport/MessageDispatchingThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Transport/MessageDispatchingThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Transport/ServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Transport/ServerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Boot/BootConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Boot/BootConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Boot/TemporaryBootDataLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Boot/TemporaryBootDataLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Components/SolutionBuilderComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/SolutionBuilderComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Components/SolutionBuilderFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/SolutionBuilderFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/P2PClient/TicketServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/P2PClient/TicketServiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Interfaces/IPuzzleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Interfaces/IPuzzleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/LocalPuzzleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/LocalPuzzleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/LocalSolutionTicketRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/LocalSolutionTicketRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/LocalSolutionTicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/LocalSolutionTicketService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/ReplikaSynchronisationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/ReplikaSynchronisationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/TournamentFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/TournamentFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pawz/Transport/SocketServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pawz/Transport/SocketServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,10 +74,12 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.App.executor&quot;: &quot;Run&quot;,
     &quot;Application.CLITest.executor&quot;: &quot;Run&quot;,
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.bootTest.executor&quot;: &quot;Run&quot;,
     &quot;Application.demo.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
     &quot;JUnit.All in LogicalGamesTournament.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.PuzzleServiceControllerTest.testGetALlPuzzles.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.PuzzleServiceControllerTest.testGetPuzzleByIdReturnsEncodedPuzzle.executor&quot;: &quot;Run&quot;,
@@ -125,6 +131,10 @@
     &quot;JUnit.TestSimpleArithmeticPuzzleStateByteEncoding.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.TestSudokuGameDefinition.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.java in LogicalGamesTournament.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.LogicalGamesTournament [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.LogicalGamesTournament [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.LogicalGamesTournament [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.LogicalGamesTournament [validate].executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_observer.TestObservableState.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_observer.TestObservableState.test_multiple_handles.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_observer.TestObservableState.test_register_observer.executor&quot;: &quot;Run&quot;,
@@ -141,6 +151,9 @@
     &quot;Python tests.Python tests for test_timer.TestSingleEventTimer.test_progress_before_start_is_0.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_timer.TestSingleEventTimer.test_progress_in_middle.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_timer.TestTimer.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
@@ -149,13 +162,13 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Pawwz/IdeaProjects/LogicalGamesTournament&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Pawwz/libs/javafx-sdk-17.0.14/lib&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Pawwz/IdeaProjects/LogicalGamesTournament/src/main/java/org/example/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -176,19 +189,43 @@
       <recent name="pawz.P2PClient" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestReplicaDecoder.parseMalformedReply">
-    <configuration name="TestReplicaDecoder.parseMalformedPrepare" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.App">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pawz.demo2.App" />
       <module name="LogicalGamesTournament" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Pawwz\libs\javafx-sdk-17.0.14\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Replika.*" />
+          <option name="PATTERN" value="pawz.demo2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Replika" />
-      <option name="MAIN_CLASS_NAME" value="Replika.TestReplicaDecoder" />
-      <option name="METHOD_NAME" value="parseMalformedPrepare" />
-      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pawz.demo2.Main" />
+      <module name="LogicalGamesTournament" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pawz.demo2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="demo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pawz.demo.demo" />
+      <module name="LogicalGamesTournament" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pawz.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -204,22 +241,6 @@
       <option name="PACKAGE_NAME" value="Replika" />
       <option name="MAIN_CLASS_NAME" value="Replika.TestReplicaDecoder" />
       <option name="METHOD_NAME" value="parseMalformedReply" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestReplicaDecoder.parseValidPrePrepare" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="LogicalGamesTournament" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Replika.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Replika" />
-      <option name="MAIN_CLASS_NAME" value="Replika.TestReplicaDecoder" />
-      <option name="METHOD_NAME" value="parseValidPrePrepare" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -241,29 +262,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestReplicaDecoder.testMalformedPrePrepare" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="LogicalGamesTournament" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Replika.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Replika" />
-      <option name="MAIN_CLASS_NAME" value="Replika.TestReplicaDecoder" />
-      <option name="METHOD_NAME" value="testMalformedPrePrepare" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <list>
+      <item itemvalue="Application.demo" />
+      <item itemvalue="Application.App" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.TestReplicaDecoder.parseMalformedReply" />
+      <item itemvalue="JUnit.TestReplicaDecoder.parseValidPrepare" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.App" />
+        <item itemvalue="Application.demo" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.TestReplicaDecoder.parseMalformedReply" />
         <item itemvalue="JUnit.TestReplicaDecoder.parseValidPrepare" />
-        <item itemvalue="JUnit.TestReplicaDecoder.parseMalformedPrepare" />
-        <item itemvalue="JUnit.TestReplicaDecoder.testMalformedPrePrepare" />
-        <item itemvalue="JUnit.TestReplicaDecoder.parseValidPrePrepare" />
       </list>
     </recent_temporary>
   </component>
@@ -348,7 +360,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742499284906</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Gathered all functionality in TournamentFacade">
+      <option name="closed" value="true" />
+      <created>1742839194753</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1742839194753</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -373,6 +393,7 @@
     <MESSAGE value="- Implemented ReplicaClient and Replica interfaces&#10;- Implemented a web like architecture &#10;- Added an offline sudoku demonstration application&#10;- Provided a bunch of utilities for byte encoded data&#10;- Implemented a network layer" />
     <MESSAGE value="Merged local development branch, which includes:&#10;- Implemented ReplicaClient and Replica interfaces&#10;- Implemented a web like architecture &#10;- Added an offline sudoku demonstration application&#10;- Provided a bunch of utilities for byte encoded data&#10;- Implemented a network layer&#10;- Implemented a pbft thread" />
     <MESSAGE value="Implemented a synchronisation thread" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented a synchronisation thread" />
+    <MESSAGE value="Gathered all functionality in TournamentFacade" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gathered all functionality in TournamentFacade" />
   </component>
 </project>

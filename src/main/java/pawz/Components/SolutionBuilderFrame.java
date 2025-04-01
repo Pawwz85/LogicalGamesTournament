@@ -13,10 +13,14 @@ public class SolutionBuilderFrame<Move extends ByteEncodable, State extends Byte
 
     private final List<Move> solution;
 
-    public SolutionBuilderFrame(@NotNull State initialState, @NotNull State currentState, List<Move> solution) {
+    private final GameDefinition<Move, State> gameDefinition;
+
+
+    public SolutionBuilderFrame(@NotNull State initialState, @NotNull State currentState, List<Move> solution, GameDefinition<Move, State> gameDefinition) {
         this.initialState = initialState;
         this.currentState = currentState;
         this.solution = solution;
+        this.gameDefinition = gameDefinition;
     }
 
     public boolean canUndo(){
@@ -27,6 +31,8 @@ public class SolutionBuilderFrame<Move extends ByteEncodable, State extends Byte
         return List.copyOf(solution);
     }
 
-
+    public boolean isAcceptable(){
+        return gameDefinition.isAcceptable(currentState);
+    }
 
 }

@@ -36,7 +36,7 @@ public class LocalSolutionTicketService<Move extends ByteEncodable, State extend
             return Optional.empty();
 
         checkOwnership(session, ticket.get());
-        return Optional.of(ticket.get());
+        return  Optional.of(ticket.get()); 
     }
 
     @Override

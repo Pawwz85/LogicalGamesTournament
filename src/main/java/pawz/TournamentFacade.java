@@ -17,9 +17,11 @@ import pawz.P2PClient.ResultParsers.SynchronisationServiceResultParser;
 import pawz.P2PClient.SignedMessageFactory;
 import pawz.Tournament.DTO.PuzzleSolutionTicketByteDecoder;
 import pawz.Tournament.DTO.PuzzleSolutionTicketDTOByteDecoder;
+import pawz.Tournament.Exceptions.RepositoryException;
 import pawz.Tournament.Interfaces.ByteEncodable;
 import pawz.Tournament.Interfaces.GameDefinition;
 import pawz.Tournament.PuzzleDecoder;
+import pawz.Tournament.PuzzleSolutionTicket;
 import pawz.Tournament.Replika.*;
 import pawz.Tournament.Synchronisation.SynchronisationCriticalSection;
 import pawz.Tournament.Synchronisation.SynchronisationThread;
@@ -28,6 +30,7 @@ import pawz.Transport.SocketTransport;
 
 import java.io.IOException;
 import java.net.ServerSocket;
+import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
@@ -58,6 +61,8 @@ public class TournamentFacade<Move extends ByteEncodable, State extends ByteEnco
     private final NodeInfo currentNode;
 
     private final ComponentPack<Move, State> componentPack;
+    private final GameDefinition<Move, State> gameDefinition;
+    private final BootConfiguration configuration;
 
     private Optional<UserIdentity> getUserIdentity(BootConfiguration configuration, int nodeID){
         return configuration.userIdentities.stream().filter(i -> i.id() == nodeID).findFirst();
@@ -67,10 +72,16 @@ public class TournamentFacade<Move extends ByteEncodable, State extends ByteEnco
         return configuration.netConfiguration.getNodeInfoList().stream().filter(info -> info.nodeID == nodeID).findFirst();
     }
 
-    public TournamentFacade(BootConfiguration configuration, GameDefinition<Move, State> gameDefinition, int nodeID) throws IOException {
+    public TournamentFacade(BootConfiguration configuration,
+                            GameDefinition<Move, State> gameDefinition,
+                            List<State> preparedStates,
+                            int nodeID) throws IOException {
 
         Optional<UserIdentity> currentUserOptional = getUserIdentity(configuration, nodeID);
         Optional<NodeInfo> currentNodeInfo = getNodeInfo(configuration, nodeID);
+
+        this.gameDefinition = gameDefinition;
+        this.configuration = configuration;
 
         if(currentNodeInfo.isEmpty() || currentUserOptional.isEmpty()){
             throw new RuntimeException("Invalid tournament configuration");
@@ -90,6 +101,13 @@ public class TournamentFacade<Move extends ByteEncodable, State extends ByteEnco
         LocalPuzzleRepository<Move, State> localPuzzleRepository = new LocalPuzzleRepository<>(
                puzzleDecoder
         );
+
+        try {
+            initRepositories(preparedStates, localPuzzleRepository, localSolutionTicketRepository);
+        } catch (RepositoryException e) {
+            throw new RuntimeException(e);
+        }
+
 
         socketTransport = new SocketTransport(configuration);
 
@@ -167,4 +185,27 @@ public class TournamentFacade<Move extends ByteEncodable, State extends ByteEnco
     public ComponentPack<Move, State> getComponentPack(){
         return componentPack;
     }
+
+    @Deprecated
+    public TournamentSystem<Move, State> getTournamentSystem() {
+        return tournamentSystem;
+    }
+
+    public int getPlayerCount(){
+        return configuration.userIdentities.size();
+    }
+
+    private void initRepositories(List<State> preparedPuzzles, LocalPuzzleRepository<Move, State> puzzleRepository,
+                                  LocalSolutionTicketRepository<Move, State> ticketRepository) throws RepositoryException {
+
+        for(var s : preparedPuzzles)
+            puzzleRepository.persists(new Puzzle<>(s));
+
+       for(UserIdentity user: configuration.userIdentities)
+            for(State s: preparedPuzzles){
+                PuzzleSolutionTicket<Move, State> t = new PuzzleSolutionTicket<>(user.id(), 0, s, this.gameDefinition);
+                ticketRepository.persists(t);
+            }
+    }
+
 }
