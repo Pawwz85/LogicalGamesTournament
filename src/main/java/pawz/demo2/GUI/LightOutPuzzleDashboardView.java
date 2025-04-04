@@ -5,6 +5,7 @@ import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Pane;
@@ -18,6 +19,7 @@ import pawz.demo2.LightOutState;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Function;
 
 public class LightOutPuzzleDashboardView implements Component.ComponentObserver<List<Puzzle<LightOutMove, LightOutState>>> {
@@ -29,6 +31,7 @@ public class LightOutPuzzleDashboardView implements Component.ComponentObserver<
     private static final Color lightOff = Color.DARKGRAY;
 
     public Function<Object, Object> repaintCallback = o-> o;
+    public Function<Optional<Puzzle<LightOutMove, LightOutState>>, Object> onPuzzleSelected = o -> o;
 
     private static class PuzzleCell extends ListCell<Puzzle<LightOutMove, LightOutState>>{
 
@@ -72,10 +75,17 @@ public class LightOutPuzzleDashboardView implements Component.ComponentObserver<
         }
     }
 
+
+    private Button createSelectButton(){
+        Button solveButton = new Button("Solve this puzzle");
+        solveButton.setOnMouseClicked(mouseEvent -> onPuzzleSelected.apply(getSelectedPuzzle()));
+
+        return solveButton;
+    }
+
     public LightOutPuzzleDashboardView(){
         view.setCellFactory(new PuzzleCell.PuzzleCellFactory());
-
-        pane.getChildren().addAll(view);
+        pane.getChildren().addAll(view, createSelectButton());
 
     }
 
@@ -88,14 +98,15 @@ public class LightOutPuzzleDashboardView implements Component.ComponentObserver<
     @Override
     public void onObservedDataUpdate(List<Puzzle<LightOutMove, LightOutState>> puzzles) {
         System.out.println("received update");
-        Platform.runLater(new Task<Object>() {
+        Platform.runLater(new Task<>() {
             @Override
-            protected Object call() throws Exception {
+            protected Object call() {
                 render(puzzles);
                 return null;
             }
         });
     }
+
 
     public Parent getAsParent(){
         return pane;
@@ -103,5 +114,16 @@ public class LightOutPuzzleDashboardView implements Component.ComponentObserver<
 
     public Node getAsNode(){
         return pane;
+    }
+
+    public Optional<Puzzle<LightOutMove, LightOutState>> getSelectedPuzzle(){
+        var selectionModel = view.getSelectionModel();
+
+        if(selectionModel == null)
+            return Optional.empty();
+
+        return Optional.ofNullable(
+                selectionModel.getSelectedItem()
+        );
     }
 }

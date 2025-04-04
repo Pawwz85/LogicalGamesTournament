@@ -7,16 +7,14 @@ import pawz.Boot.BootConfiguration;
 import pawz.Boot.NetworkConfiguration;
 import pawz.Boot.TemporaryBootDataLoader;
 import pawz.Components.*;
-import pawz.Components.Internals.EventLoop;
 import pawz.Components.Internals.TournamentEvent;
 import pawz.Components.NamedEvents.PuzzleDashboardEvent;
 import pawz.Components.NamedEvents.SubmissionDashboardEvent;
+import pawz.Components.SolutionBuilderFrame.SolutionBuilderFrame;
 import pawz.Puzzle;
 import pawz.Tournament.DTO.PuzzleSolutionTicketDTO;
-import pawz.Tournament.Exceptions.RepositoryException;
 import pawz.Tournament.PuzzleSolutionTicket;
 import pawz.TournamentFacade;
-import pawz.demo.SudokuState;
 import pawz.demo2.GUI.*;
 
 import java.util.ArrayList;
@@ -78,11 +76,9 @@ public class App extends Application {
         ComponentPack<LightOutMove, LightOutState> pack = facade.getComponentPack();
 
 
-
         LightOutState s = generateRandomState();
-        pack.solutionBuilderComponent.setFrame(new SolutionBuilderFrame<>(s, s, new ArrayList<>() , new LightOutGameDefinition()));
 
-       ApplicationModel model = new ApplicationModel(pack, stage);
+       ApplicationModel model = new ApplicationModel(facade, stage);
 
        Scene scene = new Scene(model.getAsParent());
 

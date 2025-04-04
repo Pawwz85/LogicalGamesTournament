@@ -30,7 +30,7 @@ public class MessageBox {
     public void addMsg(String m){
         msgs.add(m);
         updateDisplay();
-        // TODO: refresh }
+        }
 
     public VBox getBox(){
         return box;

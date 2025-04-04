@@ -17,7 +17,6 @@ import java.io.IOException;
 import java.util.*;
 
 
-// TODO: add method for adding a new ticket
 public class TicketServiceController<Move extends ByteEncodable, State extends ByteEncodable> {
 
     private final LocalSolutionTicketService<Move, State> service;

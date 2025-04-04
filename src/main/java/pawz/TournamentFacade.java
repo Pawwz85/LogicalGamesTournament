@@ -4,16 +4,25 @@ import com.gmail.woodyc40.pbft.Client;
 import com.gmail.woodyc40.pbft.Replica;
 import com.google.gson.JsonObject;
 import pawz.Auth.SignedMessage;
+import pawz.Auth.UserSession;
 import pawz.Boot.BootConfiguration;
 import pawz.Boot.NodeInfo;
 import pawz.Boot.UserIdentity;
 import pawz.Components.ComponentPack;
+import pawz.Components.Control.SolutionFrameSelector;
+import pawz.Components.Control.TicketSelector;
+import pawz.Components.SolutionBuilderFrame.FrameDashboardComponent;
+import pawz.Components.SolutionBuilderFrame.SolutionFrameStore;
+import pawz.TournamentClient.RemoteTicketService;
 import pawz.Components.Internals.EventLoop;
 import pawz.Components.Internals.ServiceProbe;
 import pawz.Components.PuzzleDashboardComponent;
-import pawz.Components.SolutionBuilderComponent;
+import pawz.Components.SolutionBuilderFrame.SolutionBuilderComponent;
 import pawz.Components.SubmissionDashboardComponent;
+import pawz.DerivedImplementations.DeriveByteUtils;
+import pawz.DerivedImplementations.PlainByteEncoder;
 import pawz.P2PClient.ResultParsers.SynchronisationServiceResultParser;
+import pawz.P2PClient.ResultParsers.TicketServiceResultParser;
 import pawz.P2PClient.SignedMessageFactory;
 import pawz.Tournament.DTO.PuzzleSolutionTicketByteDecoder;
 import pawz.Tournament.DTO.PuzzleSolutionTicketDTOByteDecoder;
@@ -64,6 +73,13 @@ public class TournamentFacade<Move extends ByteEncodable, State extends ByteEnco
     private final GameDefinition<Move, State> gameDefinition;
     private final BootConfiguration configuration;
 
+    private final   SolutionFrameStore<Move, State> frameStore = new SolutionFrameStore<>();
+
+    public final SolutionFrameSelector<Move, State> frameSelector;
+    private final RemoteTicketService<Move, State> remoteTicketService;
+
+    public final TicketSelector<Move, State> ticketSelector;
+
     private Optional<UserIdentity> getUserIdentity(BootConfiguration configuration, int nodeID){
         return configuration.userIdentities.stream().filter(i -> i.id() == nodeID).findFirst();
     }
@@ -90,6 +106,8 @@ public class TournamentFacade<Move extends ByteEncodable, State extends ByteEnco
         currentNode = currentNodeInfo.get();
         currentUser = currentUserOptional.get();
 
+
+        DeriveByteUtils<Move> moveDeriveByteUtils = new DeriveByteUtils<>();
         PuzzleSolutionTicketDTOByteDecoder<Move, State> ticketDTOByteDecoder = new PuzzleSolutionTicketDTOByteDecoder<>(gameDefinition.moveByteDecoder(), gameDefinition.stateByteDecoder(), gameDefinition);
         PuzzleDecoder<Move, State> puzzleDecoder =  new PuzzleDecoder<>(gameDefinition.stateByteDecoder());
 
@@ -142,6 +160,12 @@ public class TournamentFacade<Move extends ByteEncodable, State extends ByteEnco
         serviceProbe = new ServiceProbe<>(tournamentSystem, synchronisationCriticalSection, tournamentEventLoop);
         this.serviceProbeThread = new Thread(serviceProbe);
 
+        this.frameSelector = new SolutionFrameSelector<>(frameStore);
+
+        TicketServiceResultParser<Move, State> ticketServiceResultParser = new TicketServiceResultParser<>(ticketDTOByteDecoder);
+        this.remoteTicketService = new RemoteTicketService<>(this.tournamentSystem.getTicketService(), client, signedMessageFactory, ticketServiceResultParser , moveDeriveByteUtils.collectionByteEncoder(new PlainByteEncoder<>()));
+
+        this.ticketSelector = new TicketSelector<>(new UserSession(currentUser.id()), tournamentSystem.getPuzzleService(), remoteTicketService);
     }
 
     public void start(){
@@ -172,13 +196,15 @@ public class TournamentFacade<Move extends ByteEncodable, State extends ByteEnco
         ComponentPack<Move, State> result = new ComponentPack<>(
                 this.tournamentEventLoop,
                 new PuzzleDashboardComponent<>(),
-                new SolutionBuilderComponent<>(gameDefinition),
-                new SubmissionDashboardComponent<>()
+                new SolutionBuilderComponent<>(this.tournamentEventLoop, gameDefinition),
+                new SubmissionDashboardComponent<>(),
+                new FrameDashboardComponent<>(gameDefinition, frameStore)
         );
 
         result.eventLoop.registerComponent(result.puzzleDashboardComponent);
         result.eventLoop.registerComponent(result.solutionBuilderComponent);
         result.eventLoop.registerComponent(result.submissionDashboardComponent);
+        result.eventLoop.registerComponent(result.frameDashboardComponent);
         return result;
     }
 
@@ -207,5 +233,6 @@ public class TournamentFacade<Move extends ByteEncodable, State extends ByteEnco
                 ticketRepository.persists(t);
             }
     }
+
 
 }

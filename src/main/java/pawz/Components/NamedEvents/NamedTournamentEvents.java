@@ -9,4 +9,5 @@ public class NamedTournamentEvents {
     public final static int SyncStatusEventCode = 1;
     public final static int SubmissionDashboardEventCode = 2;
     public final static int PuzzleDashboardEventCode = 3;
+    public final static int UserIssuedSolutionFrameUpdate = 4;
 }

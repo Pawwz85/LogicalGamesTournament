@@ -7,37 +7,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2ab2b01-cd5a-4b9f-bcb4-eaca217b4188" name="Changes" comment="Gathered all functionality in TournamentFacade">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/Control/SolutionFrameSelector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/GUI/ApplicationModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/GUI/ComponentWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/GUI/LightOutPuzzleDashboardView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/GUI/LightOutSolutionBuilderView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/GUI/MessageBox.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/GUI/RootViewModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/GUI/SubmissionDashboardView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/GUI/Theme.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/LightOutGameDefinition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/LightOutMove.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/LightOutMoveDecoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/LightOutState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/LightOutStateDecoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/Main.java" afterDir="false" />
+    <list default="true" id="a2ab2b01-cd5a-4b9f-bcb4-eaca217b4188" name="Changes" comment="- Added a small demo">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/Control/TicketSelector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/NamedEvents/UserIssuedSolutionFrameUpdateEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/SolutionBuilderFrame/FrameDashboardComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/SolutionBuilderFrame/SolutionFrameStore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pawz/TournamentClient/RemoteTicketService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Boot/BootConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Boot/BootConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Boot/TemporaryBootDataLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Boot/TemporaryBootDataLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Components/SolutionBuilderComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/SolutionBuilderComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Components/SolutionBuilderFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/SolutionBuilderFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Components/ComponentPack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/ComponentPack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Components/Control/SolutionFrameSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/Control/SolutionFrameSelector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Components/NamedEvents/NamedTournamentEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/NamedEvents/NamedTournamentEvents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Components/SolutionBuilderComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/SolutionBuilderFrame/SolutionBuilderComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Components/SolutionBuilderFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Components/SolutionBuilderFrame/SolutionBuilderFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/P2PClient/RemoteSolutionTicket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/P2PClient/RemoteSolutionTicket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pawz/P2PClient/TicketServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/P2PClient/TicketServiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Interfaces/IPuzzleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Interfaces/IPuzzleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/LocalPuzzleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/LocalPuzzleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/LocalSolutionTicketRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/LocalSolutionTicketRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/LocalSolutionTicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/LocalSolutionTicketService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/ReplikaSynchronisationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/Tournament/Replika/ReplikaSynchronisationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pawz/TournamentFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/TournamentFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pawz/Transport/SocketServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pawz/Transport/SocketServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/demo2/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/demo2/GUI/ApplicationModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/GUI/ApplicationModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/demo2/GUI/LightOutPuzzleDashboardView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/GUI/LightOutPuzzleDashboardView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/demo2/GUI/LightOutSolutionBuilderView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/GUI/LightOutSolutionBuilderView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pawz/demo2/GUI/MessageBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pawz/demo2/GUI/MessageBox.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,105 +61,105 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.App.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CLITest.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.bootTest.executor&quot;: &quot;Run&quot;,
-    &quot;Application.demo.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;JUnit.All in LogicalGamesTournament.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PuzzleServiceControllerTest.testGetALlPuzzles.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PuzzleServiceControllerTest.testGetPuzzleByIdReturnsEncodedPuzzle.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PuzzleServiceControllerTest.testGetTicketByID.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PuzzleServiceControllerTest.testGetTicketByIDWhenNoIDIsGiven.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PuzzleServiceControllerTest.testGetTicketByIDWhenTicketDoesntExist.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RequestParserTest.testBaseCase.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.RequestParserTest.testEmptyBytes.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RequestParserTest.testInvalidJson.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RequestParserTest.testInvalidUri.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RequestParserTest.testNoParams.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SocketServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SocketServiceTest.testSend.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SynchronisationManagerTest.TestSynchronisationRecovery.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SynchronisationManagerTest.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.SynchronisationManagerTest.testHelperClasses.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.SynchronisationManagerTest.testSynchronisationRetryNeeded.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestArithmeticGame.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestByteDecoder.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestCollectionByteDecoder.testEmptyCollection.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestCollectionByteDecoder.testNotEmptyCollection.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestCollectionChecksum.testChecksumDifferMissingNumber.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestCollectionChecksum.testChecksumDifferNumber.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestCollectionChecksum.testChecksumMissingNumber.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestCollectionChecksum.testEmptyCollectionThrowsNoException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestCollectionChecksum.testOrderDoesNotChangeChecksum.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestIntegerMoveByteEncoding.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestLocalPuzzleRepository.testPersistThenGet.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestLocalPuzzleRepository.testPersists.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestLocalPuzzleRepository.testSaveAndRetrieveMultipleItems.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestLocalPuzzleRepository.testUpdate.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestLocalPuzzleRepository.updateWithoutMatchingItem.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestLocalPuzzleService.testGetById.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestLocalTicketRepository.testGetAll.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestLocalTicketRepository.testPersists.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestLocalTicketRepository.testUpdate.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestLocalTicketRepository.testUpdateNonExistingItem.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestPuzzleSolutionTicket.TicketThrowsExceptionWhenMethodIsCalledInWrongPhase.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestPuzzleSolutionTicket.testInvalidHash.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestPuzzleSolutionTicket.testInvalidSolutionRejection.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestPuzzleSolutionTicket.testValidSolutionDeclaration.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestPuzzleSolutionTicketDTOByteEncoding.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestReplicaDecoder.parseInvalidRequest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestReplicaDecoder.parseMalformedPrepare.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestReplicaDecoder.parseMalformedReply.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestReplicaDecoder.parseValidPrepare.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestReplicaDecoder.parseValidRequest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestReplicaDecoder.testMalformedPrePrepare.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestSimpleArithmeticPuzzleStateByteEncoding.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestSudokuGameDefinition.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.java in LogicalGamesTournament.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.LogicalGamesTournament [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.LogicalGamesTournament [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.LogicalGamesTournament [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.LogicalGamesTournament [validate].executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_observer.TestObservableState.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_observer.TestObservableState.test_multiple_handles.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_observer.TestObservableState.test_register_observer.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_observer.TestObservableState.test_unregister_observer.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_observer.TestObserver.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_observer.TestObserver.test_multi_watches.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_observer.TestObserver.test_unwatch.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_observer.TestObserver.test_unwatch_all.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_observer.TestObserver.test_unwatch_single.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_observer.TestObserver.test_watch.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_serializable.MyTestCase.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_serializable.MyTestCase.test_something.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_timer.TestRepeatingEventTimer.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_timer.TestSingleEventTimer.test_progress_before_start_is_0.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_timer.TestSingleEventTimer.test_progress_in_middle.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_timer.TestTimer.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Pawwz/libs/javafx-sdk-17.0.14/lib&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Pawwz/IdeaProjects/LogicalGamesTournament/src/main/java/org/example/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.App.executor": "Debug",
+    "Application.CLITest.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.bootTest.executor": "Run",
+    "Application.demo.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.All in LogicalGamesTournament.executor": "Run",
+    "JUnit.PuzzleServiceControllerTest.testGetALlPuzzles.executor": "Run",
+    "JUnit.PuzzleServiceControllerTest.testGetPuzzleByIdReturnsEncodedPuzzle.executor": "Run",
+    "JUnit.PuzzleServiceControllerTest.testGetTicketByID.executor": "Run",
+    "JUnit.PuzzleServiceControllerTest.testGetTicketByIDWhenNoIDIsGiven.executor": "Run",
+    "JUnit.PuzzleServiceControllerTest.testGetTicketByIDWhenTicketDoesntExist.executor": "Run",
+    "JUnit.RequestParserTest.testBaseCase.executor": "Debug",
+    "JUnit.RequestParserTest.testEmptyBytes.executor": "Run",
+    "JUnit.RequestParserTest.testInvalidJson.executor": "Run",
+    "JUnit.RequestParserTest.testInvalidUri.executor": "Run",
+    "JUnit.RequestParserTest.testNoParams.executor": "Run",
+    "JUnit.SocketServiceTest.executor": "Run",
+    "JUnit.SocketServiceTest.testSend.executor": "Run",
+    "JUnit.SynchronisationManagerTest.TestSynchronisationRecovery.executor": "Run",
+    "JUnit.SynchronisationManagerTest.executor": "Debug",
+    "JUnit.SynchronisationManagerTest.testHelperClasses.executor": "Debug",
+    "JUnit.SynchronisationManagerTest.testSynchronisationRetryNeeded.executor": "Run",
+    "JUnit.TestArithmeticGame.executor": "Run",
+    "JUnit.TestByteDecoder.executor": "Run",
+    "JUnit.TestCollectionByteDecoder.testEmptyCollection.executor": "Run",
+    "JUnit.TestCollectionByteDecoder.testNotEmptyCollection.executor": "Run",
+    "JUnit.TestCollectionChecksum.testChecksumDifferMissingNumber.executor": "Run",
+    "JUnit.TestCollectionChecksum.testChecksumDifferNumber.executor": "Run",
+    "JUnit.TestCollectionChecksum.testChecksumMissingNumber.executor": "Run",
+    "JUnit.TestCollectionChecksum.testEmptyCollectionThrowsNoException.executor": "Run",
+    "JUnit.TestCollectionChecksum.testOrderDoesNotChangeChecksum.executor": "Run",
+    "JUnit.TestIntegerMoveByteEncoding.executor": "Run",
+    "JUnit.TestLocalPuzzleRepository.testPersistThenGet.executor": "Run",
+    "JUnit.TestLocalPuzzleRepository.testPersists.executor": "Run",
+    "JUnit.TestLocalPuzzleRepository.testSaveAndRetrieveMultipleItems.executor": "Run",
+    "JUnit.TestLocalPuzzleRepository.testUpdate.executor": "Run",
+    "JUnit.TestLocalPuzzleRepository.updateWithoutMatchingItem.executor": "Run",
+    "JUnit.TestLocalPuzzleService.testGetById.executor": "Run",
+    "JUnit.TestLocalTicketRepository.testGetAll.executor": "Run",
+    "JUnit.TestLocalTicketRepository.testPersists.executor": "Run",
+    "JUnit.TestLocalTicketRepository.testUpdate.executor": "Run",
+    "JUnit.TestLocalTicketRepository.testUpdateNonExistingItem.executor": "Run",
+    "JUnit.TestPuzzleSolutionTicket.TicketThrowsExceptionWhenMethodIsCalledInWrongPhase.executor": "Run",
+    "JUnit.TestPuzzleSolutionTicket.testInvalidHash.executor": "Run",
+    "JUnit.TestPuzzleSolutionTicket.testInvalidSolutionRejection.executor": "Run",
+    "JUnit.TestPuzzleSolutionTicket.testValidSolutionDeclaration.executor": "Run",
+    "JUnit.TestPuzzleSolutionTicketDTOByteEncoding.executor": "Run",
+    "JUnit.TestReplicaDecoder.parseInvalidRequest.executor": "Run",
+    "JUnit.TestReplicaDecoder.parseMalformedPrepare.executor": "Run",
+    "JUnit.TestReplicaDecoder.parseMalformedReply.executor": "Run",
+    "JUnit.TestReplicaDecoder.parseValidPrepare.executor": "Run",
+    "JUnit.TestReplicaDecoder.parseValidRequest.executor": "Run",
+    "JUnit.TestReplicaDecoder.testMalformedPrePrepare.executor": "Run",
+    "JUnit.TestSimpleArithmeticPuzzleStateByteEncoding.executor": "Run",
+    "JUnit.TestSudokuGameDefinition.executor": "Run",
+    "JUnit.java in LogicalGamesTournament.executor": "Run",
+    "Maven.LogicalGamesTournament [clean].executor": "Run",
+    "Maven.LogicalGamesTournament [install].executor": "Run",
+    "Maven.LogicalGamesTournament [package].executor": "Run",
+    "Maven.LogicalGamesTournament [validate].executor": "Run",
+    "Python tests.Python tests for test_observer.TestObservableState.executor": "Run",
+    "Python tests.Python tests for test_observer.TestObservableState.test_multiple_handles.executor": "Run",
+    "Python tests.Python tests for test_observer.TestObservableState.test_register_observer.executor": "Run",
+    "Python tests.Python tests for test_observer.TestObservableState.test_unregister_observer.executor": "Run",
+    "Python tests.Python tests for test_observer.TestObserver.executor": "Run",
+    "Python tests.Python tests for test_observer.TestObserver.test_multi_watches.executor": "Run",
+    "Python tests.Python tests for test_observer.TestObserver.test_unwatch.executor": "Run",
+    "Python tests.Python tests for test_observer.TestObserver.test_unwatch_all.executor": "Run",
+    "Python tests.Python tests for test_observer.TestObserver.test_unwatch_single.executor": "Run",
+    "Python tests.Python tests for test_observer.TestObserver.test_watch.executor": "Run",
+    "Python tests.Python tests for test_serializable.MyTestCase.executor": "Run",
+    "Python tests.Python tests for test_serializable.MyTestCase.test_something.executor": "Run",
+    "Python tests.Python tests for test_timer.TestRepeatingEventTimer.executor": "Run",
+    "Python tests.Python tests for test_timer.TestSingleEventTimer.test_progress_before_start_is_0.executor": "Run",
+    "Python tests.Python tests for test_timer.TestSingleEventTimer.test_progress_in_middle.executor": "Run",
+    "Python tests.Python tests for test_timer.TestTimer.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Pawwz/libs/javafx-sdk-17.0.14/lib",
+    "onboarding.tips.debug.path": "C:/Users/Pawwz/IdeaProjects/LogicalGamesTournament/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.JavaFX"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Pawwz\IdeaProjects\LogicalGamesTournament\src\main\python\Components" />
@@ -263,9 +252,9 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.demo" />
       <item itemvalue="Application.App" />
       <item itemvalue="Application.Main" />
+      <item itemvalue="Application.demo" />
       <item itemvalue="JUnit.TestReplicaDecoder.parseMalformedReply" />
       <item itemvalue="JUnit.TestReplicaDecoder.parseValidPrepare" />
     </list>
@@ -368,7 +357,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742839194753</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="- Added a small demo">
+      <option name="closed" value="true" />
+      <created>1743547932799</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1743547932799</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -394,6 +391,7 @@
     <MESSAGE value="Merged local development branch, which includes:&#10;- Implemented ReplicaClient and Replica interfaces&#10;- Implemented a web like architecture &#10;- Added an offline sudoku demonstration application&#10;- Provided a bunch of utilities for byte encoded data&#10;- Implemented a network layer&#10;- Implemented a pbft thread" />
     <MESSAGE value="Implemented a synchronisation thread" />
     <MESSAGE value="Gathered all functionality in TournamentFacade" />
-    <option name="LAST_COMMIT_MESSAGE" value="Gathered all functionality in TournamentFacade" />
+    <MESSAGE value="- Added a small demo" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Added a small demo" />
   </component>
 </project>

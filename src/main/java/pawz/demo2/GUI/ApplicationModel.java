@@ -7,20 +7,27 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import pawz.Components.ComponentPack;
 import pawz.Components.PuzzleDashboardComponent;
-import pawz.Components.SolutionBuilderComponent;
+import pawz.Components.SolutionBuilderFrame.SolutionBuilderComponent;
 import pawz.Components.SubmissionDashboardComponent;
-import pawz.Puzzle;
+import pawz.TournamentFacade;
 import pawz.demo2.LightOutMove;
 import pawz.demo2.LightOutState;
 
 public class ApplicationModel {
+
+    // top level variables
+
+
+    // Components
+
     private final Theme theme = new Theme();
     private final PuzzleDashboardComponent<LightOutMove, LightOutState> puzzleDashboardComponent;
     private final SubmissionDashboardComponent<LightOutMove, LightOutState> submissionDashboardComponent;
     private final SolutionBuilderComponent<LightOutMove, LightOutState> solutionBuilderComponent;
 
+
+    // views
 
     private final LightOutPuzzleDashboardView puzzleDashboardView = new LightOutPuzzleDashboardView();
     private final LightOutSolutionBuilderView solutionBuilderView;
@@ -30,9 +37,9 @@ public class ApplicationModel {
 
     private final Pane pane = new Pane();
 
-    private final Theme appTheme = new Theme();
 
-    public ApplicationModel(ComponentPack<LightOutMove, LightOutState> pack, Stage stage){
+    public ApplicationModel(TournamentFacade<LightOutMove, LightOutState> facade, Stage stage){
+        var pack = facade.getComponentPack();
         puzzleDashboardComponent = pack.puzzleDashboardComponent;
         solutionBuilderComponent = pack.solutionBuilderComponent;
         submissionDashboardComponent = pack.submissionDashboardComponent;
@@ -45,10 +52,17 @@ public class ApplicationModel {
         submissionDashboardComponent.registerObserver(submissionDashboardView);
 
 
-
         puzzleDashboardView.repaintCallback = this::repaint;
         submissionDashboardView.repaintCallback = this::repaint;
         solutionBuilderView.repaintCallback = this::repaint;
+
+        puzzleDashboardView.onPuzzleSelected = puzzle -> {
+            if (puzzle.isPresent()){
+                var frame = facade.frameSelector.selectFrame(puzzle.get().puzzleId);
+                frame.ifPresent(solutionBuilderComponent::setFrame);
+            }
+            return null;
+        } ;
 
         solutionBuilderView.getAsNode().setLayoutY(100);
 

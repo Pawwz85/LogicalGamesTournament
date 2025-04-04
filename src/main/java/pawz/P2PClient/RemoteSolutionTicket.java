@@ -86,7 +86,7 @@ public class RemoteSolutionTicket<Move extends ByteEncodable, State extends Byte
             JsonObject apiResponse = future.get(5, TimeUnit.SECONDS);
             resultParser.declareTicket(apiResponse).assertSuccessOrThrowErrors();
         } catch (InterruptedException | ExecutionException | TimeoutException | OwnershipException | MalformedResponseException e) {
-            // TODO: what we should do in this case?
+            throw new WrongStateException();
         }
     }
 
@@ -106,7 +106,7 @@ public class RemoteSolutionTicket<Move extends ByteEncodable, State extends Byte
             JsonObject apiResponse = future.get(5, TimeUnit.SECONDS);
             resultParser.declareTicket(apiResponse).assertSuccessOrThrowErrors();
         } catch (InterruptedException | ExecutionException | TimeoutException | OwnershipException | MalformedResponseException e) {
-            // TODO: what we should do in this case?
+           throw new WrongStateException();
         }
     }
 
